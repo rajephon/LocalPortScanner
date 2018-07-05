@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="system font weights other than Regular or Bold" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -685,11 +686,11 @@
             <objects>
                 <viewController storyboardIdentifier="PortMapperViewController" id="XfG-lQ-9wD" customClass="PortMapperViewController" customModule="PortMapper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="240" height="94"/>
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="325"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BgU-Nr-1PS">
-                                <rect key="frame" x="18" y="54" width="204" height="25"/>
+                                <rect key="frame" x="18" y="285" width="204" height="25"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="PORT MAPPER" id="9PL-WH-OTK">
                                     <font key="font" size="20" name="Helvetica-Bold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -697,37 +698,121 @@
                                 </textFieldCell>
                             </textField>
                             <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="fUU-Vg-Qp8">
-                                <rect key="frame" x="20" y="43" width="200" height="5"/>
+                                <rect key="frame" x="20" y="274" width="200" height="5"/>
                             </box>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Kfm-Mu-Udk">
-                                <rect key="frame" x="20" y="20" width="202" height="17"/>
+                                <rect key="frame" x="20" y="251" width="202" height="17"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Multiline Label" id="MSf-iT-UH6">
                                     <font key="font" size="13" name="Helvetica"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="hf0-oX-Q4Q" userLabel="ScanFormView">
+                                <rect key="frame" x="20" y="20" width="200" height="248"/>
+                                <subviews>
+                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="k3U-AS-2qQ" customClass="PortRangeField" customModule="PortMapper" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="127" width="82" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="82" id="9h2-a8-Sfe"/>
+                                            <constraint firstAttribute="height" constant="22" id="zs4-CP-AnC"/>
+                                        </constraints>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" title="1" placeholderString="0 &lt; N &lt;= 65535" drawsBackground="YES" id="lbI-ka-e7r">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Iow-Ar-jRa" customClass="PortRangeField" customModule="PortMapper" customModuleProvider="target">
+                                        <rect key="frame" x="118" y="127" width="82" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="22" id="uwy-FY-1mC"/>
+                                        </constraints>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" title="9999" drawsBackground="YES" id="kxS-RZ-OJs">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8sq-Lw-ArL">
+                                        <rect key="frame" x="-6" y="91" width="212" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="lxZ-j5-atX"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="push" title="SCAN" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Hhh-eq-NlZ">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="clickScanBtn:" target="XfG-lQ-9wD" id="fSe-rr-UdJ"/>
+                                        </connections>
+                                    </button>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="K5z-ov-aE6">
+                                        <rect key="frame" x="92" y="130" width="17" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="~" id="xhS-D4-pYv">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="n7P-Yt-WJm">
+                                        <rect key="frame" x="-2" y="57" width="204" height="33"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="33" id="p78-0s-WXm"/>
+                                        </constraints>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="uAq-OP-5qu">
+                                            <font key="font" metaFont="systemMedium" size="12"/>
+                                            <color key="textColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="n7P-Yt-WJm" firstAttribute="top" secondItem="8sq-Lw-ArL" secondAttribute="bottom" constant="8" id="B5T-hf-xEE"/>
+                                    <constraint firstItem="k3U-AS-2qQ" firstAttribute="leading" secondItem="hf0-oX-Q4Q" secondAttribute="leading" id="BZh-TM-fvr"/>
+                                    <constraint firstItem="K5z-ov-aE6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="k3U-AS-2qQ" secondAttribute="trailing" constant="12" id="HsG-6F-lFo"/>
+                                    <constraint firstAttribute="trailing" secondItem="8sq-Lw-ArL" secondAttribute="trailing" id="QAb-vR-fEV"/>
+                                    <constraint firstItem="K5z-ov-aE6" firstAttribute="centerY" secondItem="hf0-oX-Q4Q" secondAttribute="centerY" constant="-14" id="Seo-Ep-PoR"/>
+                                    <constraint firstItem="k3U-AS-2qQ" firstAttribute="centerY" secondItem="hf0-oX-Q4Q" secondAttribute="centerY" constant="-14" id="W08-n7-4Vl"/>
+                                    <constraint firstItem="8sq-Lw-ArL" firstAttribute="leading" secondItem="hf0-oX-Q4Q" secondAttribute="leading" id="XB4-IG-Veo"/>
+                                    <constraint firstItem="Iow-Ar-jRa" firstAttribute="leading" secondItem="K5z-ov-aE6" secondAttribute="trailing" constant="11" id="eWP-CY-jQA"/>
+                                    <constraint firstAttribute="trailing" secondItem="Iow-Ar-jRa" secondAttribute="trailing" id="itv-LY-Orb"/>
+                                    <constraint firstAttribute="trailing" secondItem="n7P-Yt-WJm" secondAttribute="trailing" id="l7C-KS-5mK"/>
+                                    <constraint firstItem="8sq-Lw-ArL" firstAttribute="centerY" secondItem="hf0-oX-Q4Q" secondAttribute="centerY" constant="15.5" id="lDq-iy-XPF"/>
+                                    <constraint firstItem="n7P-Yt-WJm" firstAttribute="leading" secondItem="hf0-oX-Q4Q" secondAttribute="leading" id="laB-kR-1AH"/>
+                                    <constraint firstItem="Iow-Ar-jRa" firstAttribute="centerY" secondItem="hf0-oX-Q4Q" secondAttribute="centerY" constant="-14" id="u7d-8g-BLp"/>
+                                    <constraint firstItem="K5z-ov-aE6" firstAttribute="centerX" secondItem="hf0-oX-Q4Q" secondAttribute="centerX" id="uSa-dZ-acv"/>
+                                </constraints>
+                                <accessibility description="scan form"/>
+                            </customView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="Kfm-Mu-Udk" secondAttribute="bottom" constant="20" id="14E-BL-iQQ"/>
                             <constraint firstItem="BgU-Nr-1PS" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="5mj-bt-3Vb"/>
                             <constraint firstAttribute="trailing" secondItem="fUU-Vg-Qp8" secondAttribute="trailing" constant="20" id="KBz-m1-w8h"/>
+                            <constraint firstAttribute="trailing" secondItem="hf0-oX-Q4Q" secondAttribute="trailing" constant="20" id="MwC-kB-U6O"/>
                             <constraint firstAttribute="trailing" secondItem="BgU-Nr-1PS" secondAttribute="trailing" constant="20" id="QXV-J4-6s9"/>
+                            <constraint firstAttribute="bottom" secondItem="hf0-oX-Q4Q" secondAttribute="bottom" constant="20" id="W0q-lO-q5T"/>
                             <constraint firstItem="BgU-Nr-1PS" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="15" id="YDb-oB-nKm"/>
                             <constraint firstItem="fUU-Vg-Qp8" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="ZOU-5E-8oC"/>
                             <constraint firstItem="fUU-Vg-Qp8" firstAttribute="top" secondItem="BgU-Nr-1PS" secondAttribute="bottom" constant="8" id="aeJ-VT-l7o"/>
                             <constraint firstItem="Kfm-Mu-Udk" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="22" id="atu-tp-uxV"/>
+                            <constraint firstItem="hf0-oX-Q4Q" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="dNU-S5-fuR"/>
                             <constraint firstAttribute="trailing" secondItem="Kfm-Mu-Udk" secondAttribute="trailing" constant="20" id="jAW-m6-UZZ"/>
                             <constraint firstItem="Kfm-Mu-Udk" firstAttribute="top" secondItem="fUU-Vg-Qp8" secondAttribute="bottom" constant="8" id="jUt-yG-6YG"/>
+                            <constraint firstItem="hf0-oX-Q4Q" firstAttribute="top" secondItem="fUU-Vg-Qp8" secondAttribute="bottom" constant="8" id="tiR-qc-knw"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="labelErrorMessgae" destination="n7P-Yt-WJm" id="HJq-85-nal"/>
                         <outlet property="lbOpenedPortList" destination="Kfm-Mu-Udk" id="vrX-oL-R6N"/>
+                        <outlet property="scanFormView" destination="hf0-oX-Q4Q" id="ov6-AO-Ij7"/>
+                        <outlet property="textPortScanEnd" destination="Iow-Ar-jRa" id="wAD-pd-10g"/>
+                        <outlet property="textPortScanStart" destination="k3U-AS-2qQ" id="16m-c3-kuf"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="75" y="770.5"/>
         </scene>
     </scenes>
 </document>
