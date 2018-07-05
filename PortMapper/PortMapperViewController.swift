@@ -10,22 +10,41 @@ import Cocoa
 //import SwiftSocket
 
 class PortMapperViewController: NSViewController {
-    let scanner = PortScannerWrapper()
+    let scanner = PortScannerWrapper()!
     
     @IBOutlet weak var lbOpenedPortList: NSTextField!
     
+    func portScanResultCallback(port:UInt16, state:PortState) -> Void {
+        
+    }
+    
+    func portScanFinish() -> Void {
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         lbOpenedPortList.stringValue = ""
-        var i: UInt16 = 1
-        while i < 1024 {
-            let result = scanner?.isOpen(i);
-            if result == true {
-                print("\(i) is opened")
-                lbOpenedPortList.stringValue += "\(i) is opened\n"
-            }
-            i += 1
-        }
+        
+        scanner.setScanResultCallback({ (port, state) -> Void in
+            self.portScanResultCallback(port: port, state: state)
+        })
+        
+        scanner.setScanFinishCallback({ () -> Void in
+            self.portScanFinish()
+        })
+        scanner.setMultiThread(true)
+        
+        
+        
+//        var i: UInt16 = 1
+//        while i < 1024 {
+//            let result = scanner?.isOpen(i);
+//            if result == true {
+//                print("\(i) is opened")
+//                lbOpenedPortList.stringValue += "\(i) is opened\n"
+//            }
+//            i += 1
+//        }
     }
     
 }

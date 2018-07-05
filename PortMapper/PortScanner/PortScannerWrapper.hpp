@@ -11,12 +11,19 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum portState { FILTERED, OPEN, CLOSED } PortState;
+
 @interface PortScannerWrapper : NSObject {
 @private
     void* _scanner;
 }
 - (PortScannerWrapper*) init;
 - (bool) isOpen: (unsigned short) port;
+- (void) setMultiThread: (bool) enable;
+- (void) setScanFinishCallback:(void (^)()) finishCallback;
+- (void) setScanResultCallback:(void (^)(unsigned short port, PortState state)) resultCallback;
+- (void) scanWithRangeStart: (unsigned short) start end:(unsigned short) end;
+- (void) dealloc;
 @end
 
 #endif /* PortScannerWrapper_hpp */
