@@ -10,6 +10,7 @@
 
 #include <memory>
 #include <functional>
+#include <mutex>
 
 class PortScanner {
 public:
@@ -32,6 +33,7 @@ public:
 private:
     CallbackScanResult _callbackScanResult;
     CallbackScanFinish _callbackScanFinish;
+    std::mutex _callbackMutex;
     bool _multiThreadMode = false;
 };
 

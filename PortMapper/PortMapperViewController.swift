@@ -47,7 +47,7 @@ class PortMapperViewController: NSViewController {
     func portScanResultCallback(port:UInt16, state:PortState) -> Void {
         scanResult[port] = state
         DispatchQueue.main.sync {
-            print("\(Double(self.scanResult.count) / Double(self.scanSize))")
+            print("callback: \(port), \(Int(Double(self.scanResult.count) / Double(self.scanSize) * 100))%")
             let progressValue = Double(self.scanResult.count) / Double(self.scanSize)
             self.labelScanning.stringValue = "SCANNING... \(Int(progressValue * 100))%"
             self.loadingProgressBar.doubleValue = progressValue
