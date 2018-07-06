@@ -26,19 +26,19 @@
 }
 - (void)setScanFinishCallback:(void (^)())finishCallback {
     PortScanner *scanner = (PortScanner *)_scanner;
-    scanner->setCallbackScanFinish([&finishCallback](){
+    scanner->setCallbackScanFinish([finishCallback](){
         finishCallback();
     });
 }
 - (void)setScanResultCallback:(void (^)(unsigned short, PortState))resultCallback {
     PortScanner *scanner = (PortScanner *)_scanner;
-    scanner->setCallbackScanResult([&resultCallback](unsigned short port, PortScanner::State state){
+    scanner->setCallbackScanResult([resultCallback](unsigned short port, PortScanner::State state){
         if (state == PortScanner::State::OPEN) {
-            resultCallback(port, PortState::OPEN);
+            resultCallback(port, PortState::PortStateOPEN);
         }else if (state == PortScanner::State::CLOSED) {
-            resultCallback(port, PortState::CLOSED);
+            resultCallback(port, PortState::PortStateCLOSED);
         }else if (state == PortScanner::State::FILTERED) {
-            resultCallback(port, PortState::FILTERED);
+            resultCallback(port, PortState::PortStateFILTERED);
         }
     });
 }

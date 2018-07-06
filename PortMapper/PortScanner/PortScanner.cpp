@@ -45,5 +45,11 @@ bool PortScanner::isOpen(unsigned short port) {
 }
 
 void PortScanner::startScan(unsigned short start, unsigned short end) {
-    
+    for (int i = start; i <= end; i++) {
+        if (isOpen(i))
+            _callbackScanResult(i, State::OPEN);
+        else
+            _callbackScanResult(i, State::CLOSED);
+    }
+//    _callbackScanFinish
 }

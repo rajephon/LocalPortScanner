@@ -11,7 +11,12 @@
 
 #import <Foundation/Foundation.h>
 
-typedef enum portState { FILTERED, OPEN, CLOSED } PortState;
+//typedef enum portState { FILTERED, OPEN, CLOSED } PortState;
+typedef NS_ENUM(NSInteger, PortState){
+    PortStateOPEN = 0,
+    PortStateCLOSED,
+    PortStateFILTERED
+};
 
 @interface PortScannerWrapper : NSObject {
 @private

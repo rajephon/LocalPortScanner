@@ -11,24 +11,59 @@ import Cocoa
 
 class PortMapperViewController: NSViewController {
     let scanner = PortScannerWrapper()!
-    
-    @IBOutlet weak var lbOpenedPortList: NSTextField!
+    let queue = DispatchQueue(label: "scaningTask")
+    let scanResultsTableViewDelegate = ScanResultsTableViewDelegate()
+    // MARK: - ScanFormView
     @IBOutlet weak var scanFormView: NSView!
-    
     @IBOutlet weak var textPortScanStart: PortRangeField!
     @IBOutlet weak var textPortScanEnd: PortRangeField!
     @IBOutlet weak var labelErrorMessgae: NSTextField!
     
+    // MARK: - ScanLoadingView
+    @IBOutlet weak var scanLoadingView: NSView!
+    @IBOutlet weak var loadingProgressBar: NSProgressIndicator!
+    @IBOutlet weak var labelScanning: NSTextField!
+    
+    @IBOutlet weak var scanResultView: NSView!
+    @IBOutlet weak var scanResultsTableView: NSTableView!
+    
+    var scanSize:UInt16 = 0
+    var scanResult:Dictionary = [UInt16: PortState]()
+    
     func portScanStartWithRange(start:UInt16, end:UInt16) -> Void {
+        scanResultView.isHidden = true
         scanFormView.isHidden = true
+        scanLoadingView.isHidden = false
+        scanSize = end - start + 1
+        scanResult.removeAll()
+        loadingProgressBar.doubleValue = 0.0
+        self.labelScanning.stringValue = "Scan start"
+        queue.async {
+            self.scanner.scan(withRangeStart: start, end: end)
+        }
     }
     
+    // calling by subthread
     func portScanResultCallback(port:UInt16, state:PortState) -> Void {
-        
+        scanResult[port] = state
+        DispatchQueue.main.sync {
+            print("\(Double(self.scanResult.count) / Double(self.scanSize))")
+            let progressValue = Double(self.scanResult.count) / Double(self.scanSize)
+            self.labelScanning.stringValue = "SCANNING... \(Int(progressValue * 100))%"
+            self.loadingProgressBar.doubleValue = progressValue
+            if self.scanResult.count == self.scanSize {
+                portScanFinish()
+            }
+        }
     }
     
+    // need calling by main thread with sync
     func portScanFinish() -> Void {
-        
+        loadingProgressBar.doubleValue = 1.0
+        scanLoadingView.isHidden = true
+        scanResultView.isHidden = false
+        scanResultsTableViewDelegate.updateData(scanResult)
+        scanResultsTableView.reloadData()
     }
     
     func showErrorMessage(_ msg:String) -> Void {
@@ -39,7 +74,15 @@ class PortMapperViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        lbOpenedPortList.stringValue = ""
+        labelErrorMessgae.isHidden = true
+        scanLoadingView.isHidden = true
+        loadingProgressBar.minValue = 0.0
+        loadingProgressBar.maxValue = 1.0
+        scanResultView.isHidden = true;
+        
+        scanResultsTableView.delegate = scanResultsTableViewDelegate
+        scanResultsTableView.dataSource = scanResultsTableViewDelegate
+        scanResultsTableViewDelegate.filterDsiplayItem([PortState.OPEN])
         
         scanner.setScanResultCallback({ (port, state) -> Void in
             self.portScanResultCallback(port: port, state: state)
@@ -50,15 +93,6 @@ class PortMapperViewController: NSViewController {
         })
         scanner.setMultiThread(true)
     
-//        var i: UInt16 = 1
-//        while i < 1024 {
-//            let result = scanner?.isOpen(i);
-//            if result == true {
-//                print("\(i) is opened")
-//                lbOpenedPortList.stringValue += "\(i) is opened\n"
-//            }
-//            i += 1
-//        }
     }
     
     @IBAction func clickScanBtn(_ sender: Any) {
@@ -78,6 +112,15 @@ class PortMapperViewController: NSViewController {
         if end > 65535 {
             showErrorMessage("마지막 범위는 65535보다 작아야 합니다.")
             return
+        }
+        portScanStartWithRange(start: start, end: end)
+    }
+    
+    @IBAction func clickRescanBtn(_ sender: Any) {
+        guard let start = UInt16(textPortScanStart.stringValue),
+            let end = UInt16(textPortScanEnd.stringValue),
+            start <= end, 0 < start, end <= 65535 else {
+                return
         }
         portScanStartWithRange(start: start, end: end)
     }
