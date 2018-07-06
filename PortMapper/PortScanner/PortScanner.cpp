@@ -11,18 +11,16 @@
 #include <sstream>
 #include <chrono>
 #include <list>
-#include <vector>
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <iostream>
 #include <unistd.h>
-#include <thread>
 #include "PortScanner.hpp"
 
 PortScanner::PortScanner() {
-    
+
 }
 
 bool PortScanner::isOpen(unsigned short port) {
@@ -44,18 +42,18 @@ bool PortScanner::isOpen(unsigned short port) {
 
 void PortScanner::startScan(unsigned short start, unsigned short end) {
     unsigned int concurentThreads = std::thread::hardware_concurrency();
-    std::cout << "thread: " << concurentThreads << std::endl;
     unsigned short loopSize = end - start + 1;
     if (concurentThreads <= 0 || loopSize <= 128) {
         concurentThreads = 1;
     }
+    std::cout << "thread: " << concurentThreads << std::endl;
     unsigned short quota = loopSize / concurentThreads;
-    std::vector<std::thread> workers;
+    setCancel(false);
     for (int i = 0; i < concurentThreads; i++) {
-        workers.push_back(std::thread([i, start, end, quota, concurentThreads, this](){
+        _workers.push_back(std::thread([i, start, end, quota, concurentThreads, this](){
             int j = start + quota * i;
             int max = (i+1 == concurentThreads)? end+1 : j + quota;
-            for (; j < max; j++) {
+            for (; j < max && !this->isCancelled(); j++) {
                 if (isOpen(j)) {
                     std::lock_guard<std::mutex> guard(_callbackMutex);
                     _callbackScanResult(j, State::OPEN);
@@ -66,9 +64,18 @@ void PortScanner::startScan(unsigned short start, unsigned short end) {
             }
         }));
     }
-    for (auto &t : workers) {
-        if (t.joinable()) {
-            t.join();
-        }
-    }
+}
+
+void PortScanner::stop() {
+    setCancel(true);
+}
+
+void PortScanner::setCancel(bool cancel) {
+    std::lock_guard<std::mutex> guard(_cancelMutex);
+    _cancel = cancel;
+}
+
+bool PortScanner::isCancelled() {
+    std::lock_guard<std::mutex> guard(_cancelMutex);
+    return _cancel;
 }

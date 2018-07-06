@@ -15,11 +15,6 @@
     return self;
 }
 
-- (bool)isOpen:(unsigned short)port {
-    PortScanner *scanner = (PortScanner *)_scanner;
-    return scanner->isOpen(port);
-}
-
 - (void)setMultiThread:(bool)enable {
     PortScanner *scanner = (PortScanner *)_scanner;
     scanner->setMultiThreadMode(enable);
@@ -45,7 +40,11 @@
 - (void)scanWithRangeStart:(unsigned short)start end:(unsigned short)end {
     PortScanner *scanner = (PortScanner *)_scanner;
     scanner->startScan(start, end);
-    
+}
+
+- (void)stop {
+    PortScanner *scanner = (PortScanner *)_scanner;
+    scanner->stop();
 }
 
 - (void)dealloc {

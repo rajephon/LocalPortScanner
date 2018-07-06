@@ -778,35 +778,8 @@
                                 </constraints>
                                 <accessibility description="scan form"/>
                             </customView>
-                            <customView hidden="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G1e-7c-8zH" userLabel="ScanLoadingView">
-                                <rect key="frame" x="1000" y="20" width="200" height="248"/>
-                                <subviews>
-                                    <progressIndicator wantsLayer="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="csv-PJ-MQO">
-                                        <rect key="frame" x="0.0" y="114" width="200" height="20"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="18" id="IJn-Na-qio"/>
-                                        </constraints>
-                                    </progressIndicator>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JJi-XV-XYB">
-                                        <rect key="frame" x="-2" y="141" width="184" height="17"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="SCANNING......" id="DDX-Fk-0Ic">
-                                            <font key="font" metaFont="system"/>
-                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="csv-PJ-MQO" firstAttribute="centerY" secondItem="G1e-7c-8zH" secondAttribute="centerY" id="80Y-0a-0GC"/>
-                                    <constraint firstAttribute="trailing" secondItem="csv-PJ-MQO" secondAttribute="trailing" id="J33-nw-Ndz"/>
-                                    <constraint firstItem="JJi-XV-XYB" firstAttribute="leading" secondItem="G1e-7c-8zH" secondAttribute="leading" id="JmT-Ym-izb"/>
-                                    <constraint firstItem="csv-PJ-MQO" firstAttribute="top" secondItem="JJi-XV-XYB" secondAttribute="bottom" constant="8" id="Pum-sY-y5S"/>
-                                    <constraint firstAttribute="trailing" secondItem="JJi-XV-XYB" secondAttribute="trailing" constant="20" id="e21-Dc-c8H"/>
-                                    <constraint firstItem="csv-PJ-MQO" firstAttribute="leading" secondItem="G1e-7c-8zH" secondAttribute="leading" id="nZQ-87-YOE"/>
-                                </constraints>
-                            </customView>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="9jV-hp-KRu">
-                                <rect key="frame" x="20" y="20" width="200" height="248"/>
+                            <customView misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9jV-hp-KRu">
+                                <rect key="frame" x="500" y="20" width="200" height="248"/>
                                 <subviews>
                                     <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PpZ-GS-jah">
                                         <rect key="frame" x="0.0" y="34" width="200" height="214"/>
@@ -934,6 +907,48 @@
                                     <constraint firstItem="ByC-87-oA1" firstAttribute="leading" secondItem="9jV-hp-KRu" secondAttribute="leading" id="fvU-L3-6re"/>
                                     <constraint firstAttribute="bottom" secondItem="ByC-87-oA1" secondAttribute="bottom" id="iMb-Vn-lGL"/>
                                     <constraint firstItem="PpZ-GS-jah" firstAttribute="top" secondItem="9jV-hp-KRu" secondAttribute="top" id="u9O-Ey-6H1"/>
+                                </constraints>
+                            </customView>
+                            <customView hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G1e-7c-8zH" userLabel="ScanLoadingView">
+                                <rect key="frame" x="20" y="20" width="200" height="248"/>
+                                <subviews>
+                                    <progressIndicator wantsLayer="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="csv-PJ-MQO">
+                                        <rect key="frame" x="0.0" y="114" width="200" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18" id="IJn-Na-qio"/>
+                                        </constraints>
+                                    </progressIndicator>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JJi-XV-XYB">
+                                        <rect key="frame" x="-2" y="141" width="184" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="SCANNING......" id="DDX-Fk-0Ic">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Tbx-Ly-ck6">
+                                        <rect key="frame" x="59" y="67" width="82" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="T1f-Rh-w4P">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                            <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="clickScanCancelBtn:" target="XfG-lQ-9wD" id="2Pu-1m-F07"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Tbx-Ly-ck6" firstAttribute="centerX" secondItem="G1e-7c-8zH" secondAttribute="centerX" id="5lB-t2-sc3"/>
+                                    <constraint firstItem="csv-PJ-MQO" firstAttribute="centerY" secondItem="G1e-7c-8zH" secondAttribute="centerY" id="80Y-0a-0GC"/>
+                                    <constraint firstAttribute="trailing" secondItem="csv-PJ-MQO" secondAttribute="trailing" id="J33-nw-Ndz"/>
+                                    <constraint firstItem="JJi-XV-XYB" firstAttribute="leading" secondItem="G1e-7c-8zH" secondAttribute="leading" id="JmT-Ym-izb"/>
+                                    <constraint firstItem="csv-PJ-MQO" firstAttribute="top" secondItem="JJi-XV-XYB" secondAttribute="bottom" constant="8" id="Pum-sY-y5S"/>
+                                    <constraint firstAttribute="trailing" secondItem="JJi-XV-XYB" secondAttribute="trailing" constant="20" id="e21-Dc-c8H"/>
+                                    <constraint firstItem="Tbx-Ly-ck6" firstAttribute="centerY" secondItem="G1e-7c-8zH" secondAttribute="centerY" constant="40" id="hqy-y2-QDK"/>
+                                    <constraint firstItem="csv-PJ-MQO" firstAttribute="leading" secondItem="G1e-7c-8zH" secondAttribute="leading" id="nZQ-87-YOE"/>
                                 </constraints>
                             </customView>
                         </subviews>

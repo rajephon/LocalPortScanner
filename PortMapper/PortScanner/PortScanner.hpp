@@ -10,7 +10,9 @@
 
 #include <memory>
 #include <functional>
+#include <thread>
 #include <mutex>
+#include <vector>
 
 class PortScanner {
 public:
@@ -27,13 +29,19 @@ public:
         _callbackScanFinish = callbackScanFinish;
     }
     
-    bool isOpen(unsigned short port);
     void startScan(unsigned short start, unsigned short end);
+    void stop();
     
 private:
+    bool isOpen(unsigned short port);
+    void setCancel(bool cancel);
+    bool isCancelled();
     CallbackScanResult _callbackScanResult;
     CallbackScanFinish _callbackScanFinish;
+    std::vector<std::thread> _workers;
     std::mutex _callbackMutex;
+    std::mutex _cancelMutex;
+    bool _cancel = false;
     bool _multiThreadMode = false;
 };
 

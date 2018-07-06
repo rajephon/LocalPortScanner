@@ -130,6 +130,16 @@ class PortMapperViewController: NSViewController {
         scanLoadingView.isHidden = true
         scanFormView.isHidden = false
     }
+    
+    @IBAction func clickScanCancelBtn(_ sender: NSButton) {
+        sender.isEnabled = false
+        queue.async {
+            self.scanner.stop()
+        }
+        scanLoadingView.isHidden = true
+        scanFormView.isHidden = false
+        sender.isEnabled = true
+    }
 }
 
 extension PortMapperViewController {

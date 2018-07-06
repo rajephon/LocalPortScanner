@@ -23,11 +23,11 @@ typedef NS_ENUM(NSInteger, PortState){
     void* _scanner;
 }
 - (PortScannerWrapper*) init;
-- (bool) isOpen: (unsigned short) port;
 - (void) setMultiThread: (bool) enable;
 - (void) setScanFinishCallback:(void (^)()) finishCallback;
 - (void) setScanResultCallback:(void (^)(unsigned short port, PortState state)) resultCallback;
 - (void) scanWithRangeStart: (unsigned short) start end:(unsigned short) end;
+- (void) stop;
 - (void) dealloc;
 @end
 
