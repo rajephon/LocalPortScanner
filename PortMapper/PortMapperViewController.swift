@@ -140,6 +140,10 @@ class PortMapperViewController: NSViewController {
         scanFormView.isHidden = false
         sender.isEnabled = true
     }
+    
+    @IBAction func clickExitBtn(_ sender: Any) {
+        NSApplication.shared.terminate(self)
+    }
 }
 
 extension PortMapperViewController {
