@@ -920,6 +920,9 @@
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
+                                        <connections>
+                                            <action selector="clickGoBackBtn:" target="XfG-lQ-9wD" id="1fX-19-yjb"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>

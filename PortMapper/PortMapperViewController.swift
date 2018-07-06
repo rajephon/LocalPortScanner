@@ -124,6 +124,12 @@ class PortMapperViewController: NSViewController {
         }
         portScanStartWithRange(start: start, end: end)
     }
+    
+    @IBAction func clickGoBackBtn(_ sender: Any) {
+        scanResultView.isHidden = true
+        scanLoadingView.isHidden = true
+        scanFormView.isHidden = false
+    }
 }
 
 extension PortMapperViewController {
