@@ -17,12 +17,10 @@
 		9D9A5EB420ECDA9E00099720 /* PortScanner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A5EB220ECDA9E00099720 /* PortScanner.cpp */; };
 		9D9A5EB720ECDD9000099720 /* PortScannerWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A5EB620ECDD9000099720 /* PortScannerWrapper.mm */; };
 		9DF309C520F0C73900F8BD9D /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF309C420F0C73900F8BD9D /* AboutViewController.swift */; };
-		B2585FC053901DEC1793CE8F /* Pods_PortMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 802187688A45AC0B39E3DD88 /* Pods_PortMapper.framework */; };
+		9DF309C720F0D1C400F8BD9D /* CHANGELOG in Resources */ = {isa = PBXBuildFile; fileRef = 9DF309C620F0D1C400F8BD9D /* CHANGELOG */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0839F563BE7389DF90C51A6A /* Pods-PortMapper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortMapper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PortMapper/Pods-PortMapper.debug.xcconfig"; sourceTree = "<group>"; };
-		802187688A45AC0B39E3DD88 /* Pods_PortMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PortMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D26F61D20EE157A008C10A6 /* YKSLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YKSLibrary.swift; sourceTree = "<group>"; };
 		9D26F61F20EF6625008C10A6 /* ScanResultsTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResultsTableViewDelegate.swift; sourceTree = "<group>"; };
 		9D9A5E9B20ECCE7700099720 /* PortMapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PortMapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,7 +37,7 @@
 		9D9A5EB520ECDD2800099720 /* PortScannerWrapper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PortScannerWrapper.hpp; sourceTree = "<group>"; };
 		9D9A5EB620ECDD9000099720 /* PortScannerWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = PortScannerWrapper.mm; sourceTree = "<group>"; };
 		9DF309C420F0C73900F8BD9D /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
-		B99985577AB5026EC13D42FF /* Pods-PortMapper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortMapper.release.xcconfig"; path = "Pods/Target Support Files/Pods-PortMapper/Pods-PortMapper.release.xcconfig"; sourceTree = "<group>"; };
+		9DF309C620F0D1C400F8BD9D /* CHANGELOG */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,37 +45,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2585FC053901DEC1793CE8F /* Pods_PortMapper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1EB55E30507E918F43D6F01D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				802187688A45AC0B39E3DD88 /* Pods_PortMapper.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		2CAD21A3D63EFC5205B6D4F1 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				0839F563BE7389DF90C51A6A /* Pods-PortMapper.debug.xcconfig */,
-				B99985577AB5026EC13D42FF /* Pods-PortMapper.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		9D9A5E9220ECCE7700099720 = {
 			isa = PBXGroup;
 			children = (
 				9D9A5E9D20ECCE7700099720 /* PortMapper */,
 				9D9A5E9C20ECCE7700099720 /* Products */,
-				2CAD21A3D63EFC5205B6D4F1 /* Pods */,
-				1EB55E30507E918F43D6F01D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +77,7 @@
 				9D26F61D20EE157A008C10A6 /* YKSLibrary.swift */,
 				9D9A5EA020ECCE7700099720 /* ViewController.swift */,
 				9D26F61F20EF6625008C10A6 /* ScanResultsTableViewDelegate.swift */,
+				9DF309C620F0D1C400F8BD9D /* CHANGELOG */,
 				9D9A5EA220ECCE7800099720 /* Assets.xcassets */,
 				9D9A5EA420ECCE7800099720 /* Main.storyboard */,
 				9D9A5EA720ECCE7800099720 /* Info.plist */,
@@ -126,7 +105,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9D9A5EAB20ECCE7800099720 /* Build configuration list for PBXNativeTarget "PortMapper" */;
 			buildPhases = (
-				ED1F17A7D41D57E75D9EEF33 /* [CP] Check Pods Manifest.lock */,
 				9D9A5E9720ECCE7700099720 /* Sources */,
 				9D9A5E9820ECCE7700099720 /* Frameworks */,
 				9D9A5E9920ECCE7700099720 /* Resources */,
@@ -181,31 +159,11 @@
 			files = (
 				9D9A5EA320ECCE7800099720 /* Assets.xcassets in Resources */,
 				9D9A5EA620ECCE7800099720 /* Main.storyboard in Resources */,
+				9DF309C720F0D1C400F8BD9D /* CHANGELOG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		ED1F17A7D41D57E75D9EEF33 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-PortMapper-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9D9A5E9720ECCE7700099720 /* Sources */ = {
@@ -352,7 +310,6 @@
 		};
 		9D9A5EAC20ECCE7800099720 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0839F563BE7389DF90C51A6A /* Pods-PortMapper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -375,7 +332,6 @@
 		};
 		9D9A5EAD20ECCE7800099720 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B99985577AB5026EC13D42FF /* Pods-PortMapper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
