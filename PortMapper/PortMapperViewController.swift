@@ -7,12 +7,14 @@
 //
 
 import Cocoa
-//import SwiftSocket
 
 class PortMapperViewController: NSViewController {
     let scanner = PortScannerWrapper()!
     let queue = DispatchQueue(label: "scaningTask")
     let scanResultsTableViewDelegate = ScanResultsTableViewDelegate()
+    
+    var aboutWindow: NSWindow? = nil
+    
     // MARK: - ScanFormView
     @IBOutlet weak var scanFormView: NSView!
     @IBOutlet weak var textPortScanStart: PortRangeField!
@@ -26,6 +28,9 @@ class PortMapperViewController: NSViewController {
     
     @IBOutlet weak var scanResultView: NSView!
     @IBOutlet weak var scanResultsTableView: NSTableView!
+    
+    @IBOutlet var menuView: NSMenu!
+    
     
     var scanSize:UInt16 = 0
     var scanResult:Dictionary = [UInt16: PortState]()
@@ -73,7 +78,7 @@ class PortMapperViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         labelErrorMessgae.isHidden = true
         scanLoadingView.isHidden = true
         loadingProgressBar.minValue = 0.0
@@ -141,7 +146,23 @@ class PortMapperViewController: NSViewController {
         sender.isEnabled = true
     }
     
-    @IBAction func clickExitBtn(_ sender: Any) {
+    @IBAction func clickAboutBtn(_ sender: Any) {
+        if aboutWindow == nil {
+            let mainStoryboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
+            let aboutViewController = mainStoryboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("AboutViewController")) as? AboutViewController
+            aboutWindow = NSWindow(contentViewController: aboutViewController!)
+            
+        }
+        aboutWindow!.makeKeyAndOrderFront(self)
+        if !aboutWindow!.isVisible {
+            let windowController = NSWindowController(window: aboutWindow)
+            windowController.showWindow(self)
+        }
+        
+    }
+    
+    
+    @IBAction func clickQuitBtn(_ sender: Any) {
         NSApplication.shared.terminate(self)
     }
 }

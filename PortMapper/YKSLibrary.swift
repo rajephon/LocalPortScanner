@@ -8,6 +8,7 @@
 
 import Foundation
 import Cocoa
+
 class NumberOnlyFormattter : NumberFormatter {
     override func isPartialStringValid(_ partialString: String,
                               newEditingString newString: AutoreleasingUnsafeMutablePointer<NSString?>?,

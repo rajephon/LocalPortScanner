@@ -16,6 +16,7 @@
 		9D9A5EAF20ECD3CD00099720 /* PortMapperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A5EAE20ECD3CD00099720 /* PortMapperViewController.swift */; };
 		9D9A5EB420ECDA9E00099720 /* PortScanner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A5EB220ECDA9E00099720 /* PortScanner.cpp */; };
 		9D9A5EB720ECDD9000099720 /* PortScannerWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A5EB620ECDD9000099720 /* PortScannerWrapper.mm */; };
+		9DF309C520F0C73900F8BD9D /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF309C420F0C73900F8BD9D /* AboutViewController.swift */; };
 		B2585FC053901DEC1793CE8F /* Pods_PortMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 802187688A45AC0B39E3DD88 /* Pods_PortMapper.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		9D9A5EB320ECDA9E00099720 /* PortScanner.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; path = PortScanner.hpp; sourceTree = "<group>"; };
 		9D9A5EB520ECDD2800099720 /* PortScannerWrapper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PortScannerWrapper.hpp; sourceTree = "<group>"; };
 		9D9A5EB620ECDD9000099720 /* PortScannerWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = PortScannerWrapper.mm; sourceTree = "<group>"; };
+		9DF309C420F0C73900F8BD9D /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		B99985577AB5026EC13D42FF /* Pods-PortMapper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortMapper.release.xcconfig"; path = "Pods/Target Support Files/Pods-PortMapper/Pods-PortMapper.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +95,7 @@
 				9D9A5EB020ECDA8800099720 /* PortScanner */,
 				9D9A5E9E20ECCE7700099720 /* AppDelegate.swift */,
 				9D9A5EAE20ECD3CD00099720 /* PortMapperViewController.swift */,
+				9DF309C420F0C73900F8BD9D /* AboutViewController.swift */,
 				9D26F61D20EE157A008C10A6 /* YKSLibrary.swift */,
 				9D9A5EA020ECCE7700099720 /* ViewController.swift */,
 				9D26F61F20EF6625008C10A6 /* ScanResultsTableViewDelegate.swift */,
@@ -215,6 +218,7 @@
 				9D26F62020EF6625008C10A6 /* ScanResultsTableViewDelegate.swift in Sources */,
 				9D26F61E20EE157A008C10A6 /* YKSLibrary.swift in Sources */,
 				9D9A5E9F20ECCE7700099720 /* AppDelegate.swift in Sources */,
+				9DF309C520F0C73900F8BD9D /* AboutViewController.swift in Sources */,
 				9D9A5EB420ECDA9E00099720 /* PortScanner.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
