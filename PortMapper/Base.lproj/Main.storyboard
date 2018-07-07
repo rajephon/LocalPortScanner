@@ -736,7 +736,7 @@
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
                                         <connections>
-                                            <action selector="clickQuitBtn:" target="XfG-lQ-9wD" id="fSe-rr-UdJ"/>
+                                            <action selector="clickScanBtn:" target="XfG-lQ-9wD" id="7oc-oB-yWg"/>
                                         </connections>
                                     </button>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="K5z-ov-aE6">
@@ -884,7 +884,7 @@
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
                                         <connections>
-                                            <action selector="clickQuitBtn:" target="XfG-lQ-9wD" id="5NY-U4-rbC"/>
+                                            <action selector="clickRescanBtn:" target="XfG-lQ-9wD" id="cM7-0M-Pge"/>
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ByC-87-oA1">
@@ -894,7 +894,7 @@
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
                                         <connections>
-                                            <action selector="clickQuitBtn:" target="XfG-lQ-9wD" id="1fX-19-yjb"/>
+                                            <action selector="clickGoBackBtn:" target="XfG-lQ-9wD" id="2LW-Pw-9dB"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -936,7 +936,7 @@ Gw
 </string>
                                         </buttonCell>
                                         <connections>
-                                            <action selector="clickQuitBtn:" target="XfG-lQ-9wD" id="2Pu-1m-F07"/>
+                                            <action selector="clickScanCancelBtn:" target="XfG-lQ-9wD" id="Ctc-Nc-zQI"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -951,6 +951,16 @@ Gw
                                     <constraint firstItem="csv-PJ-MQO" firstAttribute="leading" secondItem="G1e-7c-8zH" secondAttribute="leading" id="nZQ-87-YOE"/>
                                 </constraints>
                             </customView>
+                            <button toolTip="Terminate" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PrT-Sz-Aq1">
+                                <rect key="frame" x="20" y="71" width="200" height="19"/>
+                                <buttonCell key="cell" type="recessed" title="About Port Mapper" bezelStyle="recessed" image="buttonCell:F8a-Cu-RNX:image" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" inset="2" id="F8a-Cu-RNX">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="systemBold" size="12"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="clickAboutBtn:" target="XfG-lQ-9wD" id="oHX-PY-Thc"/>
+                                </connections>
+                            </button>
                             <button toolTip="Terminate" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="j9w-Xy-T79">
                                 <rect key="frame" x="20" y="45" width="200" height="19"/>
                                 <buttonCell key="cell" type="recessed" title="Preference" bezelStyle="recessed" image="buttonCell:6MX-qe-FhY:image" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" inset="2" id="6MX-qe-FhY">
@@ -968,14 +978,14 @@ Gw
                                     <action selector="clickQuitBtn:" target="XfG-lQ-9wD" id="o7v-84-NQz"/>
                                 </connections>
                             </button>
-                            <button toolTip="Terminate" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PrT-Sz-Aq1">
-                                <rect key="frame" x="20" y="71" width="200" height="19"/>
-                                <buttonCell key="cell" type="recessed" title="About Port Mapper" bezelStyle="recessed" image="buttonCell:F8a-Cu-RNX:image" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" inset="2" id="F8a-Cu-RNX">
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qwV-Ke-qmp">
+                                <rect key="frame" x="197" y="387" width="23" height="19"/>
+                                <buttonCell key="cell" type="recessed" title="X" bezelStyle="recessed" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hW7-Os-bCB">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="systemBold" size="12"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="clickAboutBtn:" target="XfG-lQ-9wD" id="oHX-PY-Thc"/>
+                                    <action selector="clickCloseBtn:" target="XfG-lQ-9wD" id="uca-LY-soO"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -985,6 +995,7 @@ Gw
                             <constraint firstItem="9jV-hp-KRu" firstAttribute="top" secondItem="fUU-Vg-Qp8" secondAttribute="bottom" constant="8" id="5NL-lA-aGo"/>
                             <constraint firstItem="BgU-Nr-1PS" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="5mj-bt-3Vb"/>
                             <constraint firstItem="tdo-jh-k4Y" firstAttribute="top" secondItem="j9w-Xy-T79" secondAttribute="bottom" constant="8" id="6X4-CA-dLx"/>
+                            <constraint firstAttribute="trailing" secondItem="qwV-Ke-qmp" secondAttribute="trailing" constant="20" id="DXM-iT-4oB"/>
                             <constraint firstItem="PrT-Sz-Aq1" firstAttribute="top" secondItem="hf0-oX-Q4Q" secondAttribute="bottom" constant="8" id="DeZ-3T-0ri"/>
                             <constraint firstItem="j9w-Xy-T79" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="Epq-3S-0fg"/>
                             <constraint firstItem="j9w-Xy-T79" firstAttribute="top" secondItem="PrT-Sz-Aq1" secondAttribute="bottom" constant="8" id="Gf6-mH-Sis"/>
@@ -1006,6 +1017,7 @@ Gw
                             <constraint firstItem="hf0-oX-Q4Q" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="dNU-S5-fuR"/>
                             <constraint firstItem="G1e-7c-8zH" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="eOM-bQ-dU5"/>
                             <constraint firstItem="hf0-oX-Q4Q" firstAttribute="top" secondItem="fUU-Vg-Qp8" secondAttribute="bottom" constant="8" id="tiR-qc-knw"/>
+                            <constraint firstItem="qwV-Ke-qmp" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="19" id="ySZ-5P-7TK"/>
                             <constraint firstItem="tdo-jh-k4Y" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="zbk-vt-T0r"/>
                         </constraints>
                     </view>
@@ -1013,7 +1025,6 @@ Gw
                         <outlet property="labelErrorMessgae" destination="n7P-Yt-WJm" id="HJq-85-nal"/>
                         <outlet property="labelScanning" destination="JJi-XV-XYB" id="3jh-bX-JEs"/>
                         <outlet property="loadingProgressBar" destination="csv-PJ-MQO" id="eHY-BE-HgW"/>
-                        <outlet property="menuView" destination="dCk-S8-lnd" id="Mcp-Aq-KAt"/>
                         <outlet property="scanFormView" destination="hf0-oX-Q4Q" id="ov6-AO-Ij7"/>
                         <outlet property="scanLoadingView" destination="G1e-7c-8zH" id="0Ry-uD-ceG"/>
                         <outlet property="scanResultView" destination="9jV-hp-KRu" id="MqY-8a-5ub"/>
@@ -1023,15 +1034,6 @@ Gw
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <menu id="dCk-S8-lnd">
-                    <items>
-                        <menuItem title="Preference" keyEquivalent="," id="2wN-mj-fAQ"/>
-                        <menuItem title="About Port Mapper" id="cck-9Y-D9O">
-                            <modifierMask key="keyEquivalentModifierMask"/>
-                        </menuItem>
-                        <menuItem title="Quit" keyEquivalent="q" id="FAt-Tr-LbL"/>
-                    </items>
-                </menu>
             </objects>
             <point key="canvasLocation" x="75" y="820.5"/>
         </scene>
@@ -1040,7 +1042,7 @@ Gw
             <objects>
                 <viewController title="About Port Mapper" storyboardIdentifier="AboutViewController" id="3HR-xl-gtM" customClass="AboutViewController" customModule="PortMapper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="WWH-WA-6JT">
-                        <rect key="frame" x="0.0" y="0.0" width="381" height="264"/>
+                        <rect key="frame" x="0.0" y="0.0" width="381" height="360"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ydi-vz-NHN">
@@ -1052,21 +1054,30 @@ Gw
                                 </textFieldCell>
                             </textField>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WOI-Wg-9Lk">
-                                <rect key="frame" x="182" y="228" width="16" height="16"/>
+                                <rect key="frame" x="182" y="324" width="16" height="16"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="StatusBarButtonImage" id="rcd-5y-SO1"/>
                             </imageView>
                             <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZO-8F-4bh">
-                                <rect key="frame" x="70" y="45" width="241" height="136"/>
+                                <rect key="frame" x="70" y="45" width="241" height="211"/>
                                 <clipView key="contentView" id="VEI-dO-vzw">
-                                    <rect key="frame" x="1" y="1" width="239" height="134"/>
+                                    <rect key="frame" x="1" y="1" width="239" height="209"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="L3S-2D-W0J">
-                                            <rect key="frame" x="0.0" y="0.0" width="239" height="134"/>
+                                        <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" id="L3S-2D-W0J">
+                                            <rect key="frame" x="0.0" y="0.0" width="239" height="209"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <size key="minSize" width="239" height="134"/>
+                                            <size key="minSize" width="239" height="209"/>
                                             <size key="maxSize" width="463" height="10000000"/>
+                                            <attributedString key="textStorage">
+                                                <fragment content="CHANGELOG">
+                                                    <attributes>
+                                                        <font key="NSFont" size="13" name="Helvetica"/>
+                                                        <font key="NSOriginalFont" size="13" name="Helvetica"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
                                             <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </textView>
                                     </subviews>
@@ -1077,12 +1088,20 @@ Gw
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="g8s-jR-ubk">
-                                    <rect key="frame" x="224" y="1" width="16" height="134"/>
+                                    <rect key="frame" x="224" y="1" width="16" height="209"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5O7-L0-Tgu">
+                                <rect key="frame" x="167" y="264" width="48" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="version" id="fR8-Gq-dnh">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4YQ-Fe-DdQ">
-                                <rect key="frame" x="18" y="193" width="345" height="23"/>
+                                <rect key="frame" x="18" y="289" width="345" height="23"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="PORT MAPPER" id="vss-iU-rEU">
                                     <font key="font" size="18" name="Helvetica-Bold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -1092,12 +1111,14 @@ Gw
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="4YQ-Fe-DdQ" secondAttribute="trailing" constant="20" id="8hT-G9-GB5"/>
+                            <constraint firstItem="5O7-L0-Tgu" firstAttribute="top" secondItem="4YQ-Fe-DdQ" secondAttribute="bottom" constant="8" id="Eb7-Dd-b1A"/>
                             <constraint firstAttribute="bottom" secondItem="ydi-vz-NHN" secondAttribute="bottom" constant="20" id="QYJ-3t-lRj"/>
+                            <constraint firstItem="5O7-L0-Tgu" firstAttribute="centerX" secondItem="WWH-WA-6JT" secondAttribute="centerX" id="Qw4-38-JXd"/>
                             <constraint firstItem="WOI-Wg-9Lk" firstAttribute="centerX" secondItem="WWH-WA-6JT" secondAttribute="centerX" id="Uf9-0b-IrH"/>
                             <constraint firstItem="ydi-vz-NHN" firstAttribute="top" secondItem="rZO-8F-4bh" secondAttribute="bottom" constant="8" id="Zb0-Xm-dM2"/>
                             <constraint firstItem="WOI-Wg-9Lk" firstAttribute="top" secondItem="WWH-WA-6JT" secondAttribute="top" constant="20" id="akr-MH-L0u"/>
                             <constraint firstItem="rZO-8F-4bh" firstAttribute="leading" secondItem="WWH-WA-6JT" secondAttribute="leading" constant="70" id="caO-jQ-Uqu"/>
-                            <constraint firstItem="rZO-8F-4bh" firstAttribute="top" secondItem="4YQ-Fe-DdQ" secondAttribute="bottom" constant="12" id="eRi-id-Xoa"/>
+                            <constraint firstItem="rZO-8F-4bh" firstAttribute="top" secondItem="5O7-L0-Tgu" secondAttribute="bottom" constant="8" id="cuF-JH-Zs6"/>
                             <constraint firstAttribute="trailing" secondItem="rZO-8F-4bh" secondAttribute="trailing" constant="70" id="eXO-Rh-kNz"/>
                             <constraint firstItem="4YQ-Fe-DdQ" firstAttribute="leading" secondItem="WWH-WA-6JT" secondAttribute="leading" constant="20" id="i3L-kD-Hj6"/>
                             <constraint firstAttribute="trailing" secondItem="ydi-vz-NHN" secondAttribute="trailing" constant="20" id="raf-0N-oAz"/>
@@ -1107,11 +1128,12 @@ Gw
                     </view>
                     <connections>
                         <outlet property="changeLogTextView" destination="L3S-2D-W0J" id="vfm-fB-VfI"/>
+                        <outlet property="lbVersion" destination="5O7-L0-Tgu" id="OCw-7W-CkJ"/>
                     </connections>
                 </viewController>
                 <customObject id="rET-mi-8ow" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="462.5" y="811"/>
+            <point key="canvasLocation" x="462.5" y="859"/>
         </scene>
     </scenes>
     <resources>

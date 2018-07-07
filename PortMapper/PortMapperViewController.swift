@@ -161,6 +161,12 @@ class PortMapperViewController: NSViewController {
         
     }
     
+    @IBAction func clickCloseBtn(_ sender: Any) {
+        print("click")
+        if let appDelegate = NSApplication.shared.delegate as? AppDelegate {
+            appDelegate.closePopover(sender: self)
+        }
+    }
     
     @IBAction func clickQuitBtn(_ sender: Any) {
         NSApplication.shared.terminate(self)
