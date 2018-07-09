@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class PortMapperViewController: NSViewController {
+class PortScannerViewController: NSViewController {
     let scanner = PortScannerWrapper()!
     let queue = DispatchQueue(label: "scaningTask")
     let scanResultsTableViewDelegate = ScanResultsTableViewDelegate()
@@ -173,12 +173,12 @@ class PortMapperViewController: NSViewController {
     }
 }
 
-extension PortMapperViewController {
+extension PortScannerViewController {
     // MARK: Storyboard instantiation
-    static func freshController() -> PortMapperViewController {
+    static func freshController() -> PortScannerViewController {
         let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
         let identifier = NSStoryboard.SceneIdentifier(rawValue: "PortMapperViewController")
-        guard let viewcontroller = storyboard.instantiateController(withIdentifier: identifier) as? PortMapperViewController else {
+        guard let viewcontroller = storyboard.instantiateController(withIdentifier: identifier) as? PortScannerViewController else {
             fatalError("Why cant i find PortMapperViewController? - Check Main.storyboard")
         }
         return viewcontroller

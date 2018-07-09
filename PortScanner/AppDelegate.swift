@@ -14,35 +14,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let popover = NSPopover()
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-//        if let button = statusItem.button {
-//            button.image = NSImage(named:NSImage.Name("StatusBarButtonImage"))
-//            button.action = #selector(printQuote(_:))
-//        }
-//        constructMenu()
+        print("\(#function)")
+
         if let button = statusItem.button {
             button.image = NSImage(named:NSImage.Name("StatusBarButtonImage"))
             button.action = #selector(togglePopover(_:))
         }
-        popover.contentViewController = PortMapperViewController.freshController()
+        popover.contentViewController = PortScannerViewController.freshController()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
 
-//    @objc func printQuote(_ sender: Any?) {
-//        let quoteText = "Never put off until tomorrow what you can do the day after tomorrow."
-//        let quoteAuthor = "Mark Twain"
-//
-//        print("\(quoteText) — \(quoteAuthor)")
-//    }
-//    func constructMenu() {
-//        let menu = NSMenu()
-//        menu.addItem(NSMenuItem(title: "Print Quote", action: #selector(AppDelegate.printQuote(_:)), keyEquivalent: "P"))
-//        menu.addItem(NSMenuItem.separator())
-//        menu.addItem(NSMenuItem(title: "Quit Quotes", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
-//        statusItem.menu = menu
-//    }
+
     @objc func togglePopover(_ sender: Any?) {
         if popover.isShown {
             closePopover(sender: sender)
@@ -61,5 +46,29 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         popover.performClose(sender)
     }
 
+//    func checkHelperProtocolVersion(callback: @escaping (Bool) -> Void) {
+//        let xpc = NSXPCConnection(machServiceName: helper_service_name, options: .privileged)
+//        xpc.remoteObjectInterface = NSXPCInterface(with: AuthorHelperProtocol.self)
+//        xpc.invalidationHandler = { print("XPC invalidated") }
+//        xpc.resume()
+//        print(xpc)
+//
+//        let proxy = xpc.remoteObjectProxyWithErrorHandler({
+//            err in
+//            print("proxy=>\(err)")
+//            callback(false)
+//        }) as! AuthorHelperProtocol
+//        proxy.getVersion(withReply: {
+//            str in print("get version => \(str)")
+//            if (str as String != PROTOCOL_VERSION) {
+//                xpc.invalidate()
+//                callback(false)
+//            } else {
+//                xpc.invalidate()
+//                callback(true)
+//            }
+//        })
+//    }
+    
 }
 

@@ -14,6 +14,7 @@
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
+#include <netdb.h>
 #include <arpa/inet.h>
 #include <iostream>
 #include <unistd.h>
@@ -25,15 +26,22 @@ PortScanner::PortScanner() {
 
 bool PortScanner::isOpen(unsigned short port) {
     int sock = 0;
+    struct hostent *he;
     struct sockaddr_in server_addr;
     if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
         return false;
     }
-    memset(&server_addr, 0, sizeof(server_addr));
+    if ((he = gethostbyname("127.0.0.1")) == nullptr) {
+        return false;
+    }
+    
+    memset(&server_addr, 0, sizeof(struct sockaddr_in));
     server_addr.sin_family = AF_INET;
+    memcpy(&server_addr.sin_addr.s_addr, he->h_addr, he->h_length);
     server_addr.sin_port = htons(port);
-    server_addr.sin_addr.s_addr = inet_addr("127.0.0.1");
-    if (connect(sock, (struct sockaddr *)&server_addr, sizeof(struct sockaddr)) < 0) {
+//    server_addr.sin_addr.s_addr = inet_addr("127.0.0.1");
+    if (connect(sock, (struct sockaddr *)&server_addr, sizeof(struct sockaddr_in)) < 0) {
+        perror("Error: ");
         return false;
     }
     close(sock);
@@ -64,6 +72,12 @@ void PortScanner::startScan(unsigned short start, unsigned short end) {
             }
         }));
     }
+//    for (int i = start; i <= end; i++) {
+//        if (isOpen(i)) {
+//            _callbackScanResult(i, State::OPEN);
+//        }else
+//            _callbackScanResult(i, State::CLOSED);
+//    }
 }
 
 void PortScanner::stop() {

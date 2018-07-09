@@ -12,11 +12,11 @@
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="PortMapper" id="1Xt-HY-uBw">
+                            <menuItem title="PortScanner" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="PortMapper" systemMenu="apple" id="uQy-DD-JDr">
+                                <menu key="submenu" title="PortScanner" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
-                                        <menuItem title="About PortMapper" id="5kV-Vb-QxS">
+                                        <menuItem title="About PortScanner" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
@@ -30,7 +30,7 @@
                                             <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
-                                        <menuItem title="Hide PortMapper" keyEquivalent="h" id="Olw-nP-bQN">
+                                        <menuItem title="Hide PortScanner" keyEquivalent="h" id="Olw-nP-bQN">
                                             <connections>
                                                 <action selector="hide:" target="Ady-hI-5gd" id="PnN-Uc-m68"/>
                                             </connections>
@@ -48,7 +48,7 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                                        <menuItem title="Quit PortMapper" keyEquivalent="q" id="4sb-4s-VLi">
+                                        <menuItem title="Quit PortScanner" keyEquivalent="q" id="4sb-4s-VLi">
                                             <connections>
                                                 <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
                                             </connections>
@@ -661,7 +661,7 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                                     <items>
-                                        <menuItem title="PortMapper Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                                        <menuItem title="PortScanner Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                             <connections>
                                                 <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
                                             </connections>
@@ -675,23 +675,23 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="PortMapper" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="PortScanner" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
-        <!--Port Mapper View Controller-->
+        <!--Port Scanner View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController storyboardIdentifier="PortMapperViewController" id="XfG-lQ-9wD" customClass="PortMapperViewController" customModule="PortMapper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PortMapperViewController" id="XfG-lQ-9wD" customClass="PortScannerViewController" customModule="PortScanner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="240" height="425"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BgU-Nr-1PS">
                                 <rect key="frame" x="18" y="385" width="204" height="25"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="PORT MAPPER" id="9PL-WH-OTK">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="PORT SCANNER" id="9PL-WH-OTK">
                                     <font key="font" size="20" name="Helvetica-Bold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -703,7 +703,7 @@
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="hf0-oX-Q4Q" userLabel="ScanFormView">
                                 <rect key="frame" x="20" y="98" width="200" height="270"/>
                                 <subviews>
-                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="k3U-AS-2qQ" customClass="PortRangeField" customModule="PortMapper" customModuleProvider="target">
+                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="k3U-AS-2qQ" customClass="PortRangeField" customModule="PortScanner" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="164" width="82" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="82" id="9h2-a8-Sfe"/>
@@ -715,7 +715,7 @@
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Iow-Ar-jRa" customClass="PortRangeField" customModule="PortMapper" customModuleProvider="target">
+                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Iow-Ar-jRa" customClass="PortRangeField" customModule="PortScanner" customModuleProvider="target">
                                         <rect key="frame" x="118" y="164" width="82" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="uwy-FY-1mC"/>
@@ -953,7 +953,7 @@ Gw
                             </customView>
                             <button toolTip="Terminate" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PrT-Sz-Aq1">
                                 <rect key="frame" x="20" y="71" width="200" height="19"/>
-                                <buttonCell key="cell" type="recessed" title="About Port Mapper" bezelStyle="recessed" image="buttonCell:F8a-Cu-RNX:image" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" inset="2" id="F8a-Cu-RNX">
+                                <buttonCell key="cell" type="recessed" title="About Port Scanner" bezelStyle="recessed" image="buttonCell:F8a-Cu-RNX:image" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" inset="2" id="F8a-Cu-RNX">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="systemBold" size="12"/>
                                 </buttonCell>
@@ -970,7 +970,7 @@ Gw
                             </button>
                             <button toolTip="Terminate" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tdo-jh-k4Y">
                                 <rect key="frame" x="20" y="19" width="200" height="19"/>
-                                <buttonCell key="cell" type="recessed" title="Quit Port Mapper" bezelStyle="recessed" image="buttonCell:egC-nk-zuV:image" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" inset="2" id="egC-nk-zuV">
+                                <buttonCell key="cell" type="recessed" title="Quit Port Scanner" bezelStyle="recessed" image="buttonCell:egC-nk-zuV:image" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" inset="2" id="egC-nk-zuV">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="systemBold" size="12"/>
                                 </buttonCell>
@@ -1037,10 +1037,10 @@ Gw
             </objects>
             <point key="canvasLocation" x="75" y="820.5"/>
         </scene>
-        <!--About Port Mapper-->
+        <!--About Port Scanner-->
         <scene sceneID="dKX-1K-ME1">
             <objects>
-                <viewController title="About Port Mapper" storyboardIdentifier="AboutViewController" id="3HR-xl-gtM" customClass="AboutViewController" customModule="PortMapper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="About Port Scanner" storyboardIdentifier="AboutViewController" id="3HR-xl-gtM" customClass="AboutViewController" customModule="PortScanner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="WWH-WA-6JT">
                         <rect key="frame" x="0.0" y="0.0" width="381" height="360"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1102,7 +1102,7 @@ Gw
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4YQ-Fe-DdQ">
                                 <rect key="frame" x="18" y="289" width="345" height="23"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="PORT MAPPER" id="vss-iU-rEU">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="PORT SCANNER" id="vss-iU-rEU">
                                     <font key="font" size="18" name="Helvetica-Bold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
