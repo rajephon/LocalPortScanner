@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="system font weights other than Regular or Bold" minToolsVersion="7.0"/>
@@ -700,8 +701,8 @@
                             <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="fUU-Vg-Qp8">
                                 <rect key="frame" x="20" y="374" width="200" height="5"/>
                             </box>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="hf0-oX-Q4Q" userLabel="ScanFormView">
-                                <rect key="frame" x="20" y="98" width="200" height="270"/>
+                            <customView misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hf0-oX-Q4Q" userLabel="ScanFormView">
+                                <rect key="frame" x="1000" y="98" width="200" height="270"/>
                                 <subviews>
                                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="k3U-AS-2qQ" customClass="PortRangeField" customModule="PortScanner" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="164" width="82" height="22"/>
@@ -782,13 +783,13 @@
                                 <rect key="frame" x="20" y="98" width="200" height="270"/>
                                 <subviews>
                                     <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PpZ-GS-jah">
-                                        <rect key="frame" x="0.0" y="34" width="200" height="236"/>
+                                        <rect key="frame" x="0.0" y="40" width="200" height="230"/>
                                         <clipView key="contentView" id="aWC-4Z-agA">
-                                            <rect key="frame" x="1" y="0.0" width="198" height="235"/>
+                                            <rect key="frame" x="1" y="0.0" width="198" height="229"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" autosaveColumns="NO" rowSizeStyle="automatic" headerView="y97-eU-PdX" viewBased="YES" id="0fz-6E-ReC">
-                                                    <rect key="frame" x="0.0" y="0.0" width="198" height="212"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="198" height="206"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -897,38 +898,12 @@
                                             <action selector="clickGoBackBtn:" target="XfG-lQ-9wD" id="2LW-Pw-9dB"/>
                                         </connections>
                                     </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="WM7-yh-eb3" secondAttribute="bottom" id="4RE-aF-SVY"/>
-                                    <constraint firstAttribute="trailing" secondItem="WM7-yh-eb3" secondAttribute="trailing" id="5Cj-fB-V4z"/>
-                                    <constraint firstAttribute="bottom" secondItem="PpZ-GS-jah" secondAttribute="bottom" constant="34" id="ORY-pT-bTo"/>
-                                    <constraint firstAttribute="trailing" secondItem="PpZ-GS-jah" secondAttribute="trailing" id="e2H-Ao-Y9H"/>
-                                    <constraint firstItem="PpZ-GS-jah" firstAttribute="leading" secondItem="9jV-hp-KRu" secondAttribute="leading" id="fHP-Vr-UMi"/>
-                                    <constraint firstItem="ByC-87-oA1" firstAttribute="leading" secondItem="9jV-hp-KRu" secondAttribute="leading" id="fvU-L3-6re"/>
-                                    <constraint firstAttribute="bottom" secondItem="ByC-87-oA1" secondAttribute="bottom" id="iMb-Vn-lGL"/>
-                                    <constraint firstItem="PpZ-GS-jah" firstAttribute="top" secondItem="9jV-hp-KRu" secondAttribute="top" id="u9O-Ey-6H1"/>
-                                </constraints>
-                            </customView>
-                            <customView hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G1e-7c-8zH" userLabel="ScanLoadingView">
-                                <rect key="frame" x="20" y="98" width="200" height="270"/>
-                                <subviews>
-                                    <progressIndicator wantsLayer="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="csv-PJ-MQO">
-                                        <rect key="frame" x="0.0" y="125" width="200" height="20"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="18" id="IJn-Na-qio"/>
-                                        </constraints>
+                                    <progressIndicator wantsLayer="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="67n-Wp-5ZQ">
+                                        <rect key="frame" x="0.0" y="21" width="200" height="20"/>
                                     </progressIndicator>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JJi-XV-XYB">
-                                        <rect key="frame" x="-2" y="152" width="184" height="17"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="SCANNING......" id="DDX-Fk-0Ic">
-                                            <font key="font" metaFont="system"/>
-                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Tbx-Ly-ck6">
-                                        <rect key="frame" x="59" y="78" width="82" height="32"/>
-                                        <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="T1f-Rh-w4P">
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="X9r-xb-qyd">
+                                        <rect key="frame" x="-6" y="-7" width="212" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="VaW-pX-2us">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                             <string key="keyEquivalent" base64-UTF8="YES">
@@ -936,19 +911,25 @@ Gw
 </string>
                                         </buttonCell>
                                         <connections>
-                                            <action selector="clickScanCancelBtn:" target="XfG-lQ-9wD" id="Ctc-Nc-zQI"/>
+                                            <action selector="clickScanCancelBtn:" target="XfG-lQ-9wD" id="A16-bZ-OWF"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Tbx-Ly-ck6" firstAttribute="centerX" secondItem="G1e-7c-8zH" secondAttribute="centerX" id="5lB-t2-sc3"/>
-                                    <constraint firstItem="csv-PJ-MQO" firstAttribute="centerY" secondItem="G1e-7c-8zH" secondAttribute="centerY" id="80Y-0a-0GC"/>
-                                    <constraint firstAttribute="trailing" secondItem="csv-PJ-MQO" secondAttribute="trailing" id="J33-nw-Ndz"/>
-                                    <constraint firstItem="JJi-XV-XYB" firstAttribute="leading" secondItem="G1e-7c-8zH" secondAttribute="leading" id="JmT-Ym-izb"/>
-                                    <constraint firstItem="csv-PJ-MQO" firstAttribute="top" secondItem="JJi-XV-XYB" secondAttribute="bottom" constant="8" id="Pum-sY-y5S"/>
-                                    <constraint firstAttribute="trailing" secondItem="JJi-XV-XYB" secondAttribute="trailing" constant="20" id="e21-Dc-c8H"/>
-                                    <constraint firstItem="Tbx-Ly-ck6" firstAttribute="centerY" secondItem="G1e-7c-8zH" secondAttribute="centerY" constant="40" id="hqy-y2-QDK"/>
-                                    <constraint firstItem="csv-PJ-MQO" firstAttribute="leading" secondItem="G1e-7c-8zH" secondAttribute="leading" id="nZQ-87-YOE"/>
+                                    <constraint firstItem="67n-Wp-5ZQ" firstAttribute="leading" secondItem="9jV-hp-KRu" secondAttribute="leading" id="3vg-Ml-IGd"/>
+                                    <constraint firstAttribute="bottom" secondItem="WM7-yh-eb3" secondAttribute="bottom" id="4RE-aF-SVY"/>
+                                    <constraint firstAttribute="trailing" secondItem="WM7-yh-eb3" secondAttribute="trailing" id="5Cj-fB-V4z"/>
+                                    <constraint firstItem="X9r-xb-qyd" firstAttribute="leading" secondItem="9jV-hp-KRu" secondAttribute="leading" id="Nmk-Bm-L2t"/>
+                                    <constraint firstAttribute="bottom" secondItem="PpZ-GS-jah" secondAttribute="bottom" constant="40" id="ORY-pT-bTo"/>
+                                    <constraint firstAttribute="trailing" secondItem="X9r-xb-qyd" secondAttribute="trailing" id="P8T-Jb-38b"/>
+                                    <constraint firstAttribute="trailing" secondItem="PpZ-GS-jah" secondAttribute="trailing" id="e2H-Ao-Y9H"/>
+                                    <constraint firstItem="PpZ-GS-jah" firstAttribute="leading" secondItem="9jV-hp-KRu" secondAttribute="leading" id="fHP-Vr-UMi"/>
+                                    <constraint firstItem="ByC-87-oA1" firstAttribute="leading" secondItem="9jV-hp-KRu" secondAttribute="leading" id="fvU-L3-6re"/>
+                                    <constraint firstItem="67n-Wp-5ZQ" firstAttribute="top" secondItem="PpZ-GS-jah" secondAttribute="bottom" id="iAg-Fm-tkg"/>
+                                    <constraint firstAttribute="bottom" secondItem="ByC-87-oA1" secondAttribute="bottom" id="iMb-Vn-lGL"/>
+                                    <constraint firstAttribute="bottom" secondItem="X9r-xb-qyd" secondAttribute="bottom" id="ko1-a1-F5d"/>
+                                    <constraint firstAttribute="trailing" secondItem="67n-Wp-5ZQ" secondAttribute="trailing" id="s2P-M7-y3b"/>
+                                    <constraint firstItem="PpZ-GS-jah" firstAttribute="top" secondItem="9jV-hp-KRu" secondAttribute="top" id="u9O-Ey-6H1"/>
                                 </constraints>
                             </customView>
                             <button toolTip="Terminate" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PrT-Sz-Aq1">
@@ -991,7 +972,6 @@ Gw
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="tdo-jh-k4Y" secondAttribute="trailing" constant="20" id="1NA-lc-fX8"/>
-                            <constraint firstItem="G1e-7c-8zH" firstAttribute="top" secondItem="fUU-Vg-Qp8" secondAttribute="bottom" constant="8" id="4Ee-SU-2JD"/>
                             <constraint firstItem="9jV-hp-KRu" firstAttribute="top" secondItem="fUU-Vg-Qp8" secondAttribute="bottom" constant="8" id="5NL-lA-aGo"/>
                             <constraint firstItem="BgU-Nr-1PS" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="5mj-bt-3Vb"/>
                             <constraint firstItem="tdo-jh-k4Y" firstAttribute="top" secondItem="j9w-Xy-T79" secondAttribute="bottom" constant="8" id="6X4-CA-dLx"/>
@@ -1002,7 +982,6 @@ Gw
                             <constraint firstItem="PrT-Sz-Aq1" firstAttribute="top" secondItem="9jV-hp-KRu" secondAttribute="bottom" constant="8" id="Gtp-29-07M"/>
                             <constraint firstAttribute="trailing" secondItem="9jV-hp-KRu" secondAttribute="trailing" constant="20" id="JKt-Ri-fR4"/>
                             <constraint firstAttribute="trailing" secondItem="fUU-Vg-Qp8" secondAttribute="trailing" constant="20" id="KBz-m1-w8h"/>
-                            <constraint firstItem="PrT-Sz-Aq1" firstAttribute="top" secondItem="G1e-7c-8zH" secondAttribute="bottom" constant="8" id="KLA-Zo-NV1"/>
                             <constraint firstAttribute="trailing" secondItem="hf0-oX-Q4Q" secondAttribute="trailing" constant="20" id="MwC-kB-U6O"/>
                             <constraint firstAttribute="bottom" secondItem="tdo-jh-k4Y" secondAttribute="bottom" constant="20" id="NQC-a8-0pz"/>
                             <constraint firstAttribute="trailing" secondItem="j9w-Xy-T79" secondAttribute="trailing" constant="20" id="OIN-kb-2zA"/>
@@ -1010,23 +989,22 @@ Gw
                             <constraint firstAttribute="trailing" secondItem="BgU-Nr-1PS" secondAttribute="trailing" constant="20" id="QXV-J4-6s9"/>
                             <constraint firstAttribute="trailing" secondItem="PrT-Sz-Aq1" secondAttribute="trailing" constant="20" id="RwA-mA-nVD"/>
                             <constraint firstItem="PrT-Sz-Aq1" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="U33-sg-2OC"/>
-                            <constraint firstAttribute="trailing" secondItem="G1e-7c-8zH" secondAttribute="trailing" constant="20" id="XOk-rw-ucL"/>
                             <constraint firstItem="BgU-Nr-1PS" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="15" id="YDb-oB-nKm"/>
                             <constraint firstItem="fUU-Vg-Qp8" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="ZOU-5E-8oC"/>
                             <constraint firstItem="fUU-Vg-Qp8" firstAttribute="top" secondItem="BgU-Nr-1PS" secondAttribute="bottom" constant="8" id="aeJ-VT-l7o"/>
                             <constraint firstItem="hf0-oX-Q4Q" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="dNU-S5-fuR"/>
-                            <constraint firstItem="G1e-7c-8zH" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="eOM-bQ-dU5"/>
                             <constraint firstItem="hf0-oX-Q4Q" firstAttribute="top" secondItem="fUU-Vg-Qp8" secondAttribute="bottom" constant="8" id="tiR-qc-knw"/>
                             <constraint firstItem="qwV-Ke-qmp" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="19" id="ySZ-5P-7TK"/>
                             <constraint firstItem="tdo-jh-k4Y" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="zbk-vt-T0r"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cancelScanningBtn" destination="X9r-xb-qyd" id="aKe-jq-Fyj"/>
+                        <outlet property="goBackBtn" destination="ByC-87-oA1" id="G0U-z6-1Sf"/>
                         <outlet property="labelErrorMessgae" destination="n7P-Yt-WJm" id="HJq-85-nal"/>
-                        <outlet property="labelScanning" destination="JJi-XV-XYB" id="3jh-bX-JEs"/>
-                        <outlet property="loadingProgressBar" destination="csv-PJ-MQO" id="eHY-BE-HgW"/>
+                        <outlet property="loadingProgressBar" destination="67n-Wp-5ZQ" id="aND-Af-zFs"/>
+                        <outlet property="reScanBtn" destination="WM7-yh-eb3" id="lf7-UJ-1UE"/>
                         <outlet property="scanFormView" destination="hf0-oX-Q4Q" id="ov6-AO-Ij7"/>
-                        <outlet property="scanLoadingView" destination="G1e-7c-8zH" id="0Ry-uD-ceG"/>
                         <outlet property="scanResultView" destination="9jV-hp-KRu" id="MqY-8a-5ub"/>
                         <outlet property="scanResultsTableView" destination="0fz-6E-ReC" id="tHp-n8-Ivs"/>
                         <outlet property="textPortScanEnd" destination="Iow-Ar-jRa" id="wAD-pd-10g"/>
@@ -1133,7 +1111,7 @@ Gw
                 </viewController>
                 <customObject id="rET-mi-8ow" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="462.5" y="859"/>
+            <point key="canvasLocation" x="700" y="859"/>
         </scene>
     </scenes>
     <resources>

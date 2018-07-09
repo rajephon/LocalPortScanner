@@ -22,9 +22,10 @@ class PortScannerViewController: NSViewController {
     @IBOutlet weak var labelErrorMessgae: NSTextField!
     
     // MARK: - ScanLoadingView
-    @IBOutlet weak var scanLoadingView: NSView!
     @IBOutlet weak var loadingProgressBar: NSProgressIndicator!
-    @IBOutlet weak var labelScanning: NSTextField!
+    @IBOutlet weak var cancelScanningBtn: NSButton!
+    @IBOutlet weak var goBackBtn: NSButton!
+    @IBOutlet weak var reScanBtn: NSButton!
     
     @IBOutlet weak var scanResultView: NSView!
     @IBOutlet weak var scanResultsTableView: NSTableView!
@@ -36,13 +37,14 @@ class PortScannerViewController: NSViewController {
     var scanResult:Dictionary = [UInt16: PortState]()
     
     func portScanStartWithRange(start:UInt16, end:UInt16) -> Void {
-        scanResultView.isHidden = true
         scanFormView.isHidden = true
-        scanLoadingView.isHidden = false
+        scanResultView.isHidden = false
+        setEnableScanningUI(isScanningState: true)
+        
         scanSize = end - start + 1
         scanResult.removeAll()
         loadingProgressBar.doubleValue = 0.0
-        self.labelScanning.stringValue = "Scan start"
+
         queue.async {
             self.scanner.scan(withRangeStart: start, end: end)
         }
@@ -54,10 +56,15 @@ class PortScannerViewController: NSViewController {
         DispatchQueue.main.sync {
             print("callback: \(port), \(Int(Double(self.scanResult.count) / Double(self.scanSize) * 100))%")
             let progressValue = Double(self.scanResult.count) / Double(self.scanSize)
-            self.labelScanning.stringValue = "SCANNING... \(Int(progressValue * 100))%"
+
             self.loadingProgressBar.doubleValue = progressValue
             if self.scanResult.count == self.scanSize {
                 portScanFinish()
+            }else {
+                if state == PortState.OPEN {
+                    scanResultsTableViewDelegate.updateData(scanResult)
+                    scanResultsTableView.reloadData()
+                }
             }
         }
     }
@@ -65,10 +72,10 @@ class PortScannerViewController: NSViewController {
     // need calling by main thread with sync
     func portScanFinish() -> Void {
         loadingProgressBar.doubleValue = 1.0
-        scanLoadingView.isHidden = true
         scanResultView.isHidden = false
         scanResultsTableViewDelegate.updateData(scanResult)
         scanResultsTableView.reloadData()
+        setEnableScanningUI(isScanningState: false)
     }
     
     func showErrorMessage(_ msg:String) -> Void {
@@ -80,10 +87,10 @@ class PortScannerViewController: NSViewController {
         super.viewDidLoad()
 
         labelErrorMessgae.isHidden = true
-        scanLoadingView.isHidden = true
         loadingProgressBar.minValue = 0.0
         loadingProgressBar.maxValue = 1.0
         scanResultView.isHidden = true;
+        setEnableScanningUI(isScanningState: true)
         
         scanResultsTableView.delegate = scanResultsTableViewDelegate
         scanResultsTableView.dataSource = scanResultsTableViewDelegate
@@ -100,6 +107,13 @@ class PortScannerViewController: NSViewController {
     
     }
     
+    func setEnableScanningUI(isScanningState scanningState: Bool) {
+        loadingProgressBar.isHidden = !scanningState
+        cancelScanningBtn.isHidden = !scanningState
+        goBackBtn.isHidden = scanningState
+    }
+    
+    // MARK: - IBAction
     @IBAction func clickScanBtn(_ sender: Any) {
         guard let start = UInt16(textPortScanStart.stringValue),
             let end = UInt16(textPortScanEnd.stringValue) else {
@@ -132,7 +146,6 @@ class PortScannerViewController: NSViewController {
     
     @IBAction func clickGoBackBtn(_ sender: Any) {
         scanResultView.isHidden = true
-        scanLoadingView.isHidden = true
         scanFormView.isHidden = false
     }
     
@@ -141,9 +154,9 @@ class PortScannerViewController: NSViewController {
         queue.async {
             self.scanner.stop()
         }
-        scanLoadingView.isHidden = true
         scanFormView.isHidden = false
         sender.isEnabled = true
+        setEnableScanningUI(isScanningState: false)
     }
     
     @IBAction func clickAboutBtn(_ sender: Any) {
