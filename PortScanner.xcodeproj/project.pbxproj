@@ -16,6 +16,7 @@
 		9D9A5EAF20ECD3CD00099720 /* PortScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A5EAE20ECD3CD00099720 /* PortScannerViewController.swift */; };
 		9D9A5EB420ECDA9E00099720 /* PortScanner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A5EB220ECDA9E00099720 /* PortScanner.cpp */; };
 		9D9A5EB720ECDD9000099720 /* PortScannerWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A5EB620ECDD9000099720 /* PortScannerWrapper.mm */; };
+		9DEF2A8D20F3EAA200E51CB5 /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEF2A8C20F3EAA200E51CB5 /* PreferenceViewController.swift */; };
 		9DF309C520F0C73900F8BD9D /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF309C420F0C73900F8BD9D /* AboutViewController.swift */; };
 		9DF309C720F0D1C400F8BD9D /* CHANGELOG in Resources */ = {isa = PBXBuildFile; fileRef = 9DF309C620F0D1C400F8BD9D /* CHANGELOG */; };
 /* End PBXBuildFile section */
@@ -36,6 +37,7 @@
 		9D9A5EB320ECDA9E00099720 /* PortScanner.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; path = PortScanner.hpp; sourceTree = "<group>"; };
 		9D9A5EB520ECDD2800099720 /* PortScannerWrapper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PortScannerWrapper.hpp; sourceTree = "<group>"; };
 		9D9A5EB620ECDD9000099720 /* PortScannerWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = PortScannerWrapper.mm; sourceTree = "<group>"; };
+		9DEF2A8C20F3EAA200E51CB5 /* PreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
 		9DF309C420F0C73900F8BD9D /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		9DF309C620F0D1C400F8BD9D /* CHANGELOG */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,6 +84,7 @@
 				9D9A5E9E20ECCE7700099720 /* AppDelegate.swift */,
 				9D9A5EAE20ECD3CD00099720 /* PortScannerViewController.swift */,
 				9DF309C420F0C73900F8BD9D /* AboutViewController.swift */,
+				9DEF2A8C20F3EAA200E51CB5 /* PreferenceViewController.swift */,
 				9D26F61D20EE157A008C10A6 /* YKSLibrary.swift */,
 				9D9A5EA020ECCE7700099720 /* ViewController.swift */,
 				9D26F61F20EF6625008C10A6 /* ScanResultsTableViewDelegate.swift */,
@@ -186,6 +189,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DEF2A8D20F3EAA200E51CB5 /* PreferenceViewController.swift in Sources */,
 				9D9A5EA120ECCE7700099720 /* ViewController.swift in Sources */,
 				9D9A5EB720ECDD9000099720 /* PortScannerWrapper.mm in Sources */,
 				9D9A5EAF20ECD3CD00099720 /* PortScannerViewController.swift in Sources */,

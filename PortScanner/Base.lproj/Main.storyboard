@@ -948,6 +948,9 @@ Gw
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="systemBold" size="12"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="clickPreferenceBtn:" target="XfG-lQ-9wD" id="6e8-vj-oX4"/>
+                                </connections>
                             </button>
                             <button toolTip="Terminate" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tdo-jh-k4Y">
                                 <rect key="frame" x="20" y="19" width="200" height="19"/>
@@ -1112,6 +1115,114 @@ Gw
                 <customObject id="rET-mi-8ow" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="700" y="859"/>
+        </scene>
+        <!--Port Scanner Preference-->
+        <scene sceneID="aVv-A9-YDE">
+            <objects>
+                <viewController title="Port Scanner Preference" storyboardIdentifier="PreferenceViewController" id="92D-Cm-19P" customClass="PreferenceViewController" customModule="PortScanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="L9Z-HN-Xge">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RlI-mH-lIS">
+                                <rect key="frame" x="18" y="40" width="414" height="18"/>
+                                <buttonCell key="cell" type="check" title="Automatically start Port Scanner at login" bezelStyle="regularSquare" imagePosition="left" inset="2" id="pL2-XV-JNl">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOP-iK-ZK2">
+                                <rect key="frame" x="20" y="96" width="410" height="159"/>
+                                <clipView key="contentView" id="kb7-7f-3vX">
+                                    <rect key="frame" x="1" y="23" width="408" height="135"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="KMK-Dr-2rg" id="lEp-R7-6wJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="408" height="135"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <size key="intercellSpacing" width="3" height="2"/>
+                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                            <tableColumns>
+                                                <tableColumn identifier="" width="116" minWidth="40" maxWidth="1000" id="zXm-ze-XsD">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                                    </tableHeaderCell>
+                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" title="Text" id="Yff-aC-j3E">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                </tableColumn>
+                                                <tableColumn identifier="" width="286" minWidth="40" maxWidth="1000" id="K7z-D4-1ef">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                                    </tableHeaderCell>
+                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" title="Text" id="lxS-iV-ALq">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                </tableColumn>
+                                            </tableColumns>
+                                        </tableView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="hjM-DX-o4r">
+                                    <rect key="frame" x="1" y="119" width="223" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="AyT-Ql-O39">
+                                    <rect key="frame" x="224" y="17" width="15" height="102"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <tableHeaderView key="headerView" id="KMK-Dr-2rg">
+                                    <rect key="frame" x="0.0" y="0.0" width="408" height="23"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableHeaderView>
+                            </scrollView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Xwx-hH-Qct">
+                                <rect key="frame" x="20" y="263" width="412" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Edit Well-known port list" id="GEa-Mi-daz">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lqa-Q6-4go">
+                                <rect key="frame" x="18" y="18" width="414" height="18"/>
+                                <buttonCell key="cell" type="check" title="Scanning port using multi-thread" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="rhR-Z6-JLe">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="RlI-mH-lIS" secondAttribute="trailing" constant="20" id="DMi-yT-sKB"/>
+                            <constraint firstAttribute="trailing" secondItem="HOP-iK-ZK2" secondAttribute="trailing" constant="20" id="J12-yq-XN7"/>
+                            <constraint firstItem="lqa-Q6-4go" firstAttribute="leading" secondItem="L9Z-HN-Xge" secondAttribute="leading" constant="20" id="PNh-dS-nqh"/>
+                            <constraint firstAttribute="bottom" secondItem="lqa-Q6-4go" secondAttribute="bottom" constant="20" id="V7c-QY-UwV"/>
+                            <constraint firstItem="Xwx-hH-Qct" firstAttribute="leading" secondItem="L9Z-HN-Xge" secondAttribute="leading" constant="22" id="VYa-37-f4N"/>
+                            <constraint firstItem="HOP-iK-ZK2" firstAttribute="top" secondItem="Xwx-hH-Qct" secondAttribute="bottom" constant="8" id="XxL-HP-Tcv"/>
+                            <constraint firstAttribute="trailing" secondItem="lqa-Q6-4go" secondAttribute="trailing" constant="20" id="dG2-YF-BBV"/>
+                            <constraint firstItem="HOP-iK-ZK2" firstAttribute="leading" secondItem="L9Z-HN-Xge" secondAttribute="leading" constant="20" id="eir-3F-L8h"/>
+                            <constraint firstItem="RlI-mH-lIS" firstAttribute="leading" secondItem="L9Z-HN-Xge" secondAttribute="leading" constant="20" id="fUt-jf-ieI"/>
+                            <constraint firstAttribute="trailing" secondItem="Xwx-hH-Qct" secondAttribute="trailing" constant="20" id="nfd-tt-9mb"/>
+                            <constraint firstItem="RlI-mH-lIS" firstAttribute="top" secondItem="HOP-iK-ZK2" secondAttribute="bottom" constant="40" id="vce-U8-FmI"/>
+                            <constraint firstItem="Xwx-hH-Qct" firstAttribute="top" secondItem="L9Z-HN-Xge" secondAttribute="top" constant="20" id="vjU-Ml-ZVH"/>
+                            <constraint firstItem="lqa-Q6-4go" firstAttribute="top" secondItem="RlI-mH-lIS" secondAttribute="bottom" constant="8" id="ym1-tu-rbU"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="qgt-i7-Eel" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="728" y="1252"/>
         </scene>
     </scenes>
     <resources>

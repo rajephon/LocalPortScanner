@@ -14,6 +14,7 @@ class PortScannerViewController: NSViewController {
     let scanResultsTableViewDelegate = ScanResultsTableViewDelegate()
     
     var aboutWindow: NSWindow? = nil
+    var preferenceWindow: NSWindow? = nil
     
     // MARK: - ScanFormView
     @IBOutlet weak var scanFormView: NSView!
@@ -41,8 +42,10 @@ class PortScannerViewController: NSViewController {
         scanResultView.isHidden = false
         setEnableScanningUI(isScanningState: true)
         
-        scanSize = end - start + 1
         scanResult.removeAll()
+        updateTableView(scanResult)
+        
+        scanSize = end - start + 1
         loadingProgressBar.doubleValue = 0.0
 
         queue.async {
@@ -62,8 +65,7 @@ class PortScannerViewController: NSViewController {
                 portScanFinish()
             }else {
                 if state == PortState.OPEN {
-                    scanResultsTableViewDelegate.updateData(scanResult)
-                    scanResultsTableView.reloadData()
+                    updateTableView(scanResult)
                 }
             }
         }
@@ -73,14 +75,18 @@ class PortScannerViewController: NSViewController {
     func portScanFinish() -> Void {
         loadingProgressBar.doubleValue = 1.0
         scanResultView.isHidden = false
-        scanResultsTableViewDelegate.updateData(scanResult)
-        scanResultsTableView.reloadData()
+        updateTableView(scanResult)
         setEnableScanningUI(isScanningState: false)
     }
     
     func showErrorMessage(_ msg:String) -> Void {
         labelErrorMessgae.isHidden = false
         labelErrorMessgae.stringValue = "ERROR: " + msg
+    }
+    
+    func updateTableView(_ data:Dictionary<UInt16,PortState>) {
+        scanResultsTableViewDelegate.updateData(data)
+        scanResultsTableView.reloadData()
     }
     
     override func viewDidLoad() {
@@ -154,7 +160,6 @@ class PortScannerViewController: NSViewController {
         queue.async {
             self.scanner.stop()
         }
-        scanFormView.isHidden = false
         sender.isEnabled = true
         setEnableScanningUI(isScanningState: false)
     }
@@ -164,7 +169,6 @@ class PortScannerViewController: NSViewController {
             let mainStoryboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
             let aboutViewController = mainStoryboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("AboutViewController")) as? AboutViewController
             aboutWindow = NSWindow(contentViewController: aboutViewController!)
-            
         }
         aboutWindow!.makeKeyAndOrderFront(self)
         if !aboutWindow!.isVisible {
@@ -172,6 +176,20 @@ class PortScannerViewController: NSViewController {
             windowController.showWindow(self)
         }
         
+    }
+    
+    @IBAction func clickPreferenceBtn(_ sender: Any) {
+        // PreferenceViewController
+        if preferenceWindow == nil {
+            let mainStoryboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
+            let preferenceViewController = mainStoryboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("PreferenceViewController")) as? PreferenceViewController
+            preferenceWindow = NSWindow(contentViewController: preferenceViewController!)
+        }
+        preferenceWindow!.makeKeyAndOrderFront(self)
+        if !preferenceWindow!.isVisible {
+            let windowController = NSWindowController(window: preferenceWindow)
+            windowController.showWindow(self)
+        }
     }
     
     @IBAction func clickCloseBtn(_ sender: Any) {
