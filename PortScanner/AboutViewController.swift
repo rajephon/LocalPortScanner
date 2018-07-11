@@ -12,6 +12,8 @@ class AboutViewController : NSViewController {
     @IBOutlet var changeLogTextView: NSTextView!
     @IBOutlet weak var lbVersion: NSTextField!
     
+    let changeLogFilename:String = "CHANGELOG"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,7 +24,7 @@ class AboutViewController : NSViewController {
         lbVersion.stringValue = "Version \(appVersionString)(\(appBuildNumberString))"
         
         do {
-            let path = Bundle.main.url(forResource: "CHANGELOG", withExtension: "")
+            let path = Bundle.main.url(forResource: changeLogFilename, withExtension: "")
             let content = try NSString(contentsOf: path!, encoding: String.Encoding.utf8.rawValue)
             changeLogTextView.string = "\nCHANGELOG\n\n\(content as String)"
         } catch let err as NSError {
