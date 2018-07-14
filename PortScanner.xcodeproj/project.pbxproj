@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		9D26F61E20EE157A008C10A6 /* YKSLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D26F61D20EE157A008C10A6 /* YKSLibrary.swift */; };
 		9D26F62020EF6625008C10A6 /* ScanResultsTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D26F61F20EF6625008C10A6 /* ScanResultsTableViewDelegate.swift */; };
+		9D2CC9AF20F8CDDC00B01FF2 /* AppAuthorizationRights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2CC9AE20F8CDDC00B01FF2 /* AppAuthorizationRights.swift */; };
+		9D52163B20F680F30093887E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D52163A20F680F30093887E /* main.swift */; };
+		9D52164120F683850093887E /* so.yoko.PrivilegedTaskRunnerHelper in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9D52163820F680F30093887E /* so.yoko.PrivilegedTaskRunnerHelper */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		9D52164320F683D40093887E /* PrivilegedTaskRunnerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D52164220F683D40093887E /* PrivilegedTaskRunnerHelper.swift */; };
+		9D52164420F684060093887E /* PrivilegedTaskRunnerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D52164220F683D40093887E /* PrivilegedTaskRunnerHelper.swift */; };
+		9D52164620F6843D0093887E /* ProcessHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D52164520F6843D0093887E /* ProcessHelper.swift */; };
+		9D52164720F6843D0093887E /* ProcessHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D52164520F6843D0093887E /* ProcessHelper.swift */; };
+		9D52164920F6845E0093887E /* RemoteProcessProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D52164820F6845E0093887E /* RemoteProcessProtocol.swift */; };
+		9D52164A20F6845E0093887E /* RemoteProcessProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D52164820F6845E0093887E /* RemoteProcessProtocol.swift */; };
 		9D9A5E9F20ECCE7700099720 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A5E9E20ECCE7700099720 /* AppDelegate.swift */; };
 		9D9A5EA120ECCE7700099720 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A5EA020ECCE7700099720 /* ViewController.swift */; };
 		9D9A5EA320ECCE7800099720 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D9A5EA220ECCE7800099720 /* Assets.xcassets */; };
@@ -23,9 +32,39 @@
 		9DF309C720F0D1C400F8BD9D /* CHANGELOG in Resources */ = {isa = PBXBuildFile; fileRef = 9DF309C620F0D1C400F8BD9D /* CHANGELOG */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9D52163220F6802B0093887E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LaunchServices;
+			dstSubfolderSpec = 1;
+			files = (
+				9D52164120F683850093887E /* so.yoko.PrivilegedTaskRunnerHelper in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D52163620F680F30093887E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		9D26F61D20EE157A008C10A6 /* YKSLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YKSLibrary.swift; sourceTree = "<group>"; };
 		9D26F61F20EF6625008C10A6 /* ScanResultsTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResultsTableViewDelegate.swift; sourceTree = "<group>"; };
+		9D2CC9AE20F8CDDC00B01FF2 /* AppAuthorizationRights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAuthorizationRights.swift; sourceTree = "<group>"; };
+		9D52163820F680F30093887E /* so.yoko.PrivilegedTaskRunnerHelper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = so.yoko.PrivilegedTaskRunnerHelper; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D52163A20F680F30093887E /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		9D52163F20F6814B0093887E /* PrivilegedTaskRunnerHelper-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PrivilegedTaskRunnerHelper-Info.plist"; sourceTree = "<group>"; };
+		9D52164020F682030093887E /* PrivilegedTaskRunnerHelper-Launchd.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PrivilegedTaskRunnerHelper-Launchd.plist"; sourceTree = "<group>"; };
+		9D52164220F683D40093887E /* PrivilegedTaskRunnerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivilegedTaskRunnerHelper.swift; sourceTree = "<group>"; };
+		9D52164520F6843D0093887E /* ProcessHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessHelper.swift; sourceTree = "<group>"; };
+		9D52164820F6845E0093887E /* RemoteProcessProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteProcessProtocol.swift; sourceTree = "<group>"; };
 		9D9A5E9B20ECCE7700099720 /* PortScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PortScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D9A5E9E20ECCE7700099720 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D9A5EA020ECCE7700099720 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +86,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9D52163520F680F30093887E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9D9A5E9820ECCE7700099720 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -57,19 +103,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9D322F1620F38B770014EC74 /* Frameworks */ = {
+		9D52163920F680F30093887E /* PrivilegedTaskRunnerHelper */ = {
 			isa = PBXGroup;
 			children = (
+				9D52163A20F680F30093887E /* main.swift */,
+				9D52163F20F6814B0093887E /* PrivilegedTaskRunnerHelper-Info.plist */,
+				9D52164020F682030093887E /* PrivilegedTaskRunnerHelper-Launchd.plist */,
+				9D52164220F683D40093887E /* PrivilegedTaskRunnerHelper.swift */,
+				9D52164520F6843D0093887E /* ProcessHelper.swift */,
+				9D52164820F6845E0093887E /* RemoteProcessProtocol.swift */,
 			);
-			name = Frameworks;
+			path = PrivilegedTaskRunnerHelper;
 			sourceTree = "<group>";
 		};
 		9D9A5E9220ECCE7700099720 = {
 			isa = PBXGroup;
 			children = (
 				9D9A5E9D20ECCE7700099720 /* PortScanner */,
+				9D52163920F680F30093887E /* PrivilegedTaskRunnerHelper */,
 				9D9A5E9C20ECCE7700099720 /* Products */,
-				9D322F1620F38B770014EC74 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				9D9A5E9B20ECCE7700099720 /* PortScanner.app */,
+				9D52163820F680F30093887E /* so.yoko.PrivilegedTaskRunnerHelper */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -93,6 +146,7 @@
 				9D9A5EA020ECCE7700099720 /* ViewController.swift */,
 				9D26F61F20EF6625008C10A6 /* ScanResultsTableViewDelegate.swift */,
 				9DB1A15220F6083E005B80EE /* WellKnownPortListTableViewDelegate.swift */,
+				9D2CC9AE20F8CDDC00B01FF2 /* AppAuthorizationRights.swift */,
 				9DF309C620F0D1C400F8BD9D /* CHANGELOG */,
 				9D9A5EA220ECCE7800099720 /* Assets.xcassets */,
 				9D9A5EA420ECCE7800099720 /* Main.storyboard */,
@@ -118,6 +172,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		9D52163720F680F30093887E /* PrivilegedTaskRunnerHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9D52163C20F680F30093887E /* Build configuration list for PBXNativeTarget "PrivilegedTaskRunnerHelper" */;
+			buildPhases = (
+				9D52163420F680F30093887E /* Sources */,
+				9D52163520F680F30093887E /* Frameworks */,
+				9D52163620F680F30093887E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PrivilegedTaskRunnerHelper;
+			productName = PrivilegedTaskRunnerHelper;
+			productReference = 9D52163820F680F30093887E /* so.yoko.PrivilegedTaskRunnerHelper */;
+			productType = "com.apple.product-type.tool";
+		};
 		9D9A5E9A20ECCE7700099720 /* PortScanner */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9D9A5EAB20ECCE7800099720 /* Build configuration list for PBXNativeTarget "PortScanner" */;
@@ -125,6 +196,7 @@
 				9D9A5E9720ECCE7700099720 /* Sources */,
 				9D9A5E9820ECCE7700099720 /* Frameworks */,
 				9D9A5E9920ECCE7700099720 /* Resources */,
+				9D52163220F6802B0093887E /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -145,6 +217,9 @@
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Chanwoo Noh";
 				TargetAttributes = {
+					9D52163720F680F30093887E = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
 					9D9A5E9A20ECCE7700099720 = {
 						CreatedOnToolsVersion = 9.4.1;
 						LastSwiftMigration = 0940;
@@ -153,7 +228,7 @@
 								enabled = 0;
 							};
 							com.apple.Sandbox = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -173,6 +248,7 @@
 			projectRoot = "";
 			targets = (
 				9D9A5E9A20ECCE7700099720 /* PortScanner */,
+				9D52163720F680F30093887E /* PrivilegedTaskRunnerHelper */,
 			);
 		};
 /* End PBXProject section */
@@ -192,20 +268,35 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9D52163420F680F30093887E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D52164320F683D40093887E /* PrivilegedTaskRunnerHelper.swift in Sources */,
+				9D52164720F6843D0093887E /* ProcessHelper.swift in Sources */,
+				9D52163B20F680F30093887E /* main.swift in Sources */,
+				9D52164A20F6845E0093887E /* RemoteProcessProtocol.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9D9A5E9720ECCE7700099720 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				9DEF2A8D20F3EAA200E51CB5 /* PreferenceViewController.swift in Sources */,
+				9D52164620F6843D0093887E /* ProcessHelper.swift in Sources */,
 				9D9A5EA120ECCE7700099720 /* ViewController.swift in Sources */,
 				9D9A5EB720ECDD9000099720 /* PortScannerWrapper.mm in Sources */,
 				9D9A5EAF20ECD3CD00099720 /* PortScannerViewController.swift in Sources */,
 				9D26F62020EF6625008C10A6 /* ScanResultsTableViewDelegate.swift in Sources */,
+				9D2CC9AF20F8CDDC00B01FF2 /* AppAuthorizationRights.swift in Sources */,
 				9D26F61E20EE157A008C10A6 /* YKSLibrary.swift in Sources */,
+				9D52164920F6845E0093887E /* RemoteProcessProtocol.swift in Sources */,
 				9DB1A15320F6083E005B80EE /* WellKnownPortListTableViewDelegate.swift in Sources */,
 				9D9A5E9F20ECCE7700099720 /* AppDelegate.swift in Sources */,
 				9DF309C520F0C73900F8BD9D /* AboutViewController.swift in Sources */,
 				9D9A5EB420ECDA9E00099720 /* PortScanner.cpp in Sources */,
+				9D52164420F684060093887E /* PrivilegedTaskRunnerHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +314,52 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		9D52163D20F680F30093887E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8B5JVCS72K;
+				INFOPLIST_FILE = "$(SRCROOT)/PrivilegedTaskRunnerHelper/PrivilegedTaskRunnerHelper-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				OTHER_LDFLAGS = (
+					"-sectcreate",
+					__TEXT,
+					__info_plist,
+					"\"$(SRCROOT)/PrivilegedTaskRunnerHelper/PrivilegedTaskRunnerHelper-Info.plist\"",
+					"-sectcreate",
+					__TEXT,
+					__launchd_plist,
+					"\"$(SRCROOT)/PrivilegedTaskRunnerHelper/PrivilegedTaskRunnerHelper-Launchd.plist\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = so.yoko.PrivilegedTaskRunnerHelper;
+				PRODUCT_NAME = so.yoko.PrivilegedTaskRunnerHelper;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		9D52163E20F680F30093887E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8B5JVCS72K;
+				INFOPLIST_FILE = "$(SRCROOT)/PrivilegedTaskRunnerHelper/PrivilegedTaskRunnerHelper-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				OTHER_LDFLAGS = (
+					"-sectcreate",
+					__TEXT,
+					__info_plist,
+					"\"$(SRCROOT)/PrivilegedTaskRunnerHelper/PrivilegedTaskRunnerHelper-Info.plist\"",
+					"-sectcreate",
+					__TEXT,
+					__launchd_plist,
+					"\"$(SRCROOT)/PrivilegedTaskRunnerHelper/PrivilegedTaskRunnerHelper-Launchd.plist\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = so.yoko.PrivilegedTaskRunnerHelper;
+				PRODUCT_NAME = so.yoko.PrivilegedTaskRunnerHelper;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
 		9D9A5EA920ECCE7800099720 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -342,7 +479,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = PortScanner/PortScanner.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -352,7 +488,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "-------";
+				PRODUCT_BUNDLE_IDENTIFIER = so.yoko.portscanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PortScanner/PortScanner/PortScanner-Bridging-Header.h";
@@ -367,7 +503,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = PortScanner/PortScanner.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -377,7 +512,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "-------";
+				PRODUCT_BUNDLE_IDENTIFIER = so.yoko.portscanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PortScanner/PortScanner/PortScanner-Bridging-Header.h";
@@ -388,6 +523,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9D52163C20F680F30093887E /* Build configuration list for PBXNativeTarget "PrivilegedTaskRunnerHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D52163D20F680F30093887E /* Debug */,
+				9D52163E20F680F30093887E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9D9A5E9620ECCE7700099720 /* Build configuration list for PBXProject "PortScanner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

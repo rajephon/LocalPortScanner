@@ -13,6 +13,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.squareLength)
     let popover = NSPopover()
     
+    var viewController: PortScannerViewController!
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         print("\(#function)")
 
@@ -20,11 +22,25 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             button.image = NSImage(named:NSImage.Name("StatusBarButtonImage"))
             button.action = #selector(togglePopover(_:))
         }
-        popover.contentViewController = PortScannerViewController.freshController()
+        
+        viewController = PortScannerViewController.freshController()
+        popover.contentViewController = viewController
+        viewController.installHelperDaemon()
+        
+        if !viewController.checkIfHelperDaemonExists() {
+            viewController.installHelperDaemon()
+        }else {
+            viewController.checkHelperVersionAndUpdateIfNecessary()
+        }
+        
+        // Create an empty authorization reference
+        viewController.initAuthorizationRef()
+        
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
+        viewController.freeAuthorizationRef()
     }
 
 

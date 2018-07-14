@@ -14,6 +14,8 @@ class PreferenceViewController : NSViewController {
     
     @IBOutlet weak var wellKnownPortListTableView: NSTableView!
     
+    // MARK: - NSViewController
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         wellKnownPortListTableView.delegate = wellKnownPortListTableViewDelegate
@@ -59,5 +61,12 @@ class PreferenceViewController : NSViewController {
         result = result.replacingOccurrences(of: "\n\n", with: "\n")
         return result
     }
+    
+    // MARK: - IBAction
+    
+    @IBAction func clickAddRowBtn(_ sender:NSButton) {
+        
+    }
+    
     
 }
