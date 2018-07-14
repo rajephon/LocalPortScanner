@@ -12,6 +12,9 @@ class PrivilegedTaskRunnerHelper: NSObject, RemoteProcessProtocol, NSXPCListener
     
     var listener:NSXPCListener
     
+    let commandPath:String = "/usr/sbin/lsof"
+    let commandArguments:[String] = ["-iTCP", "-sTCP:LISTEN", "-n", "-P"]
+    
     override init() {
         self.listener = NSXPCListener(machServiceName:HelperConstants.machServiceName)
         super.init()
@@ -74,7 +77,8 @@ class PrivilegedTaskRunnerHelper: NSObject, RemoteProcessProtocol, NSXPCListener
                 NSLog("PrivilegedTaskRunnerHelper: AuthorizationCopyRights was successful")
                 
                 // Create cli commands that needs to be run chained / piped
-                let needsSudoCommand = CliCommand(launchPath: "/bin/ls", arguments: ["/var/db/sudo"])
+//                let needsSudoCommand = CliCommand(launchPath: "/bin/ls", arguments: ["/var/db/sudo"])
+                let needsSudoCommand = CliCommand(launchPath: commandPath, arguments: commandArguments)
                 
                 // Prepare cli command runner
                 let command = ProcessHelper(commands: [needsSudoCommand])
@@ -103,7 +107,8 @@ class PrivilegedTaskRunnerHelper: NSObject, RemoteProcessProtocol, NSXPCListener
     func runCommand(path: String, reply: @escaping (String) -> Void) {
         
         // Create cli commands that needs to be run chained / piped
-        let needsSudoCommand = CliCommand(launchPath: "/bin/ls", arguments: ["/var/db/sudo"])
+//        let needsSudoCommand = CliCommand(launchPath: "/bin/ls", arguments: ["/var/db/sudo"])
+        let needsSudoCommand = CliCommand(launchPath: commandPath, arguments: commandArguments)
         
         // Prepare cli command runner
         let command = ProcessHelper(commands: [needsSudoCommand])
