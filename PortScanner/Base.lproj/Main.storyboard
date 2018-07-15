@@ -685,14 +685,14 @@
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController storyboardIdentifier="PortMapperViewController" id="XfG-lQ-9wD" customClass="PortScannerViewController" customModule="PortScanner" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="615" height="425"/>
+                    <view key="view" wantsLayer="YES" misplaced="YES" id="m2S-Jp-Qdl">
+                        <rect key="frame" x="0.0" y="0.0" width="640" height="425"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BgU-Nr-1PS">
-                                <rect key="frame" x="18" y="385" width="579" height="25"/>
+                                <rect key="frame" x="18" y="385" width="604" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="575" id="AeZ-uf-TX3"/>
+                                    <constraint firstAttribute="width" constant="600" id="AeZ-uf-TX3"/>
                                 </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="PORT SCANNER" id="9PL-WH-OTK">
                                     <font key="font" size="20" name="Helvetica-Bold"/>
@@ -701,10 +701,10 @@
                                 </textFieldCell>
                             </textField>
                             <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="fUU-Vg-Qp8">
-                                <rect key="frame" x="20" y="374" width="575" height="5"/>
+                                <rect key="frame" x="20" y="374" width="600" height="5"/>
                             </box>
                             <button toolTip="Terminate" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PrT-Sz-Aq1">
-                                <rect key="frame" x="20" y="71" width="575" height="19"/>
+                                <rect key="frame" x="20" y="71" width="600" height="19"/>
                                 <buttonCell key="cell" type="recessed" title="About Port Scanner" bezelStyle="recessed" image="buttonCell:F8a-Cu-RNX:image" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" inset="2" id="F8a-Cu-RNX">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="systemBold" size="12"/>
@@ -714,7 +714,7 @@
                                 </connections>
                             </button>
                             <button toolTip="Terminate" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="j9w-Xy-T79">
-                                <rect key="frame" x="20" y="45" width="575" height="19"/>
+                                <rect key="frame" x="20" y="45" width="600" height="19"/>
                                 <buttonCell key="cell" type="recessed" title="Preference" bezelStyle="recessed" image="buttonCell:6MX-qe-FhY:image" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" inset="2" id="6MX-qe-FhY">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="systemBold" size="12"/>
@@ -724,7 +724,7 @@
                                 </connections>
                             </button>
                             <button toolTip="Terminate" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tdo-jh-k4Y">
-                                <rect key="frame" x="20" y="19" width="575" height="19"/>
+                                <rect key="frame" x="20" y="19" width="600" height="19"/>
                                 <buttonCell key="cell" type="recessed" title="Quit Port Scanner" bezelStyle="recessed" image="buttonCell:egC-nk-zuV:image" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" inset="2" id="egC-nk-zuV">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="systemBold" size="12"/>
@@ -734,7 +734,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qwV-Ke-qmp">
-                                <rect key="frame" x="572" y="387" width="23" height="19"/>
+                                <rect key="frame" x="597" y="387" width="23" height="19"/>
                                 <buttonCell key="cell" type="recessed" title="X" bezelStyle="recessed" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hW7-Os-bCB">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="systemBold" size="12"/>
@@ -744,7 +744,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8sq-Lw-ArL">
-                                <rect key="frame" x="540" y="387" width="24" height="19"/>
+                                <rect key="frame" x="565" y="387" width="24" height="19"/>
                                 <buttonCell key="cell" type="recessed" title="↻" bezelStyle="recessed" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Hhh-eq-NlZ">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="systemBold" size="12"/>
@@ -754,18 +754,18 @@
                                 </connections>
                             </button>
                             <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" scrollerKnobStyle="dark" translatesAutoresizingMaskIntoConstraints="NO" id="mkw-rj-0d5">
-                                <rect key="frame" x="20" y="98" width="575" height="270"/>
+                                <rect key="frame" x="20" y="98" width="600" height="270"/>
                                 <clipView key="contentView" id="cEk-b8-VQx">
-                                    <rect key="frame" x="1" y="1" width="573" height="268"/>
+                                    <rect key="frame" x="1" y="1" width="598" height="268"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView editable="NO" importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="FMR-vJ-rGa">
-                                            <rect key="frame" x="0.0" y="0.0" width="573" height="268"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="598" height="268"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="textColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <size key="minSize" width="573" height="268"/>
-                                            <size key="maxSize" width="573" height="10000000"/>
+                                            <size key="minSize" width="598" height="268"/>
+                                            <size key="maxSize" width="598" height="10000000"/>
                                             <attributedString key="textStorage">
                                                 <fragment content=".">
                                                     <attributes>
@@ -784,7 +784,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="iar-R5-g8z">
-                                    <rect key="frame" x="558" y="1" width="16" height="268"/>
+                                    <rect key="frame" x="583" y="1" width="16" height="268"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>

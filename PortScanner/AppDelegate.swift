@@ -25,6 +25,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         viewController = PortScannerViewController.freshController()
         popover.contentViewController = viewController
+        popover.behavior = NSPopover.Behavior.semitransient
+
         viewController.installHelperDaemon()
         
         if !viewController.checkIfHelperDaemonExists() {

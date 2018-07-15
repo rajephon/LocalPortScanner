@@ -149,7 +149,7 @@ class PortScannerViewController: NSViewController {
         
         // Try to get the authorization right definition from the database
         status = AuthorizationRightGet(AppAuthorizationRights.shellRightName.utf8String!, &currentRight)
-        
+
         if (status == errAuthorizationDenied) {
             
             var defaultRules = AppAuthorizationRights.shellRightDefaultRule
@@ -181,15 +181,34 @@ class PortScannerViewController: NSViewController {
         })
     }
     
+    func clearSecurity() {
+        // Remove this app's specific authorization information from the security database
+        NSLog("\(#function)()")
+        
+        let status = AuthorizationRightRemove(authRef!, AppAuthorizationRights.shellRightName.utf8String!)
+        
+        if(status == errAuthorizationSuccess) {
+            NSLog("AppviewController: AuthorizationRightRemove was successful")
+        }
+        else {
+            NSLog("AppviewController: AuthorizationRightRemove failed")
+        }
+    }
+    
     // MARK: - api
     func printToResult(data:String) {
         resultTextView.string = "\(data)"
     }
     
+    func closePopoverView() {
+        if let appDelegate = NSApplication.shared.delegate as? AppDelegate {
+            appDelegate.closePopover(sender: self)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
     
     // MARK: - IBAction
     @IBAction func clickScanBtn(_ sender: Any) {
@@ -198,6 +217,8 @@ class PortScannerViewController: NSViewController {
     
     
     @IBAction func clickAboutBtn(_ sender: Any) {
+        closePopoverView()
+        
         if aboutWindow == nil {
             let mainStoryboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
             let aboutViewController = mainStoryboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("AboutViewController")) as? AboutViewController
@@ -213,6 +234,8 @@ class PortScannerViewController: NSViewController {
     
     @IBAction func clickPreferenceBtn(_ sender: Any) {
         // PreferenceViewController
+        closePopoverView()
+        
         if preferenceWindow == nil {
             let mainStoryboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
             let preferenceViewController = mainStoryboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("PreferenceViewController")) as? PreferenceViewController
@@ -226,13 +249,11 @@ class PortScannerViewController: NSViewController {
     }
     
     @IBAction func clickCloseBtn(_ sender: Any) {
-        print("click")
-        if let appDelegate = NSApplication.shared.delegate as? AppDelegate {
-            appDelegate.closePopover(sender: self)
-        }
+        closePopoverView()
     }
     
     @IBAction func clickQuitBtn(_ sender: Any) {
+//        clearSecurity()
         NSApplication.shared.terminate(self)
     }
 }
