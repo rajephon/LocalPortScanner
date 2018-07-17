@@ -18,23 +18,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         print("\(#function)")
 
+        // set menu bar icon & popover view
         if let button = statusItem.button {
             button.image = NSImage(named:NSImage.Name("StatusBarButtonImage"))
             button.action = #selector(togglePopover(_:))
         }
-        
         viewController = PortScannerViewController.freshController()
         popover.contentViewController = viewController
         popover.behavior = NSPopover.Behavior.semitransient
 
-        viewController.installHelperDaemon()
-        
+        // about helper daemon
+//        viewController.installHelperDaemon()
         if !viewController.checkIfHelperDaemonExists() {
             viewController.installHelperDaemon()
         }else {
             viewController.checkHelperVersionAndUpdateIfNecessary()
         }
-        
         // Create an empty authorization reference
         viewController.initAuthorizationRef()
         

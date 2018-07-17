@@ -7,9 +7,12 @@
 //
 
 import Cocoa
+import ServiceManagement
 
 class PreferenceViewController : NSViewController {
 
+    @IBOutlet weak var autoLaunchCheckbox: NSButton!
+    
     // MARK: - NSViewController
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +20,21 @@ class PreferenceViewController : NSViewController {
     
     override func viewWillAppear() {
         super.viewWillAppear()
+    }
+    
+    @IBAction func set(sender: NSButton) {
+        let appBundleIdentifier = "so.yoko.portscanner.LaunchHelper"
+        let autoLaunch = (autoLaunchCheckbox.state == NSControl.StateValue.on)
+        if SMLoginItemSetEnabled(appBundleIdentifier as CFString, autoLaunch) {
+            if autoLaunch {
+                NSLog("Successfully add login item.")
+            } else {
+                NSLog("Successfully remove login item.")
+            }
+
+        } else {
+            NSLog("Failed to add login item.")
+        }
     }
     
 }

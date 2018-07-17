@@ -935,6 +935,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="setWithSender:" target="92D-Cm-19P" id="TXE-UZ-jiz"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>
@@ -944,6 +947,9 @@
                             <constraint firstAttribute="trailing" secondItem="RlI-mH-lIS" secondAttribute="trailing" constant="55" id="xtn-rQ-ZZV"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="autoLaunchCheckbox" destination="RlI-mH-lIS" id="4xC-pf-tvI"/>
+                    </connections>
                 </viewController>
                 <customObject id="qgt-i7-Eel" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

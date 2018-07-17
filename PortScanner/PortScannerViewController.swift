@@ -183,8 +183,6 @@ class PortScannerViewController: NSViewController {
     
     func clearSecurity() {
         // Remove this app's specific authorization information from the security database
-        NSLog("\(#function)()")
-        
         let status = AuthorizationRightRemove(authRef!, AppAuthorizationRights.shellRightName.utf8String!)
         
         if(status == errAuthorizationSuccess) {
