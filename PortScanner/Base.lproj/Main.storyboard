@@ -685,7 +685,7 @@
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController storyboardIdentifier="PortMapperViewController" id="XfG-lQ-9wD" customClass="PortScannerViewController" customModule="PortScanner" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" wantsLayer="YES" misplaced="YES" id="m2S-Jp-Qdl">
+                    <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="640" height="425"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
@@ -765,7 +765,7 @@
                                             <color key="textColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <size key="minSize" width="598" height="268"/>
-                                            <size key="maxSize" width="598" height="10000000"/>
+                                            <size key="maxSize" width="600" height="10000000"/>
                                             <attributedString key="textStorage">
                                                 <fragment content=".">
                                                     <attributes>
@@ -828,11 +828,11 @@
             <objects>
                 <viewController title="About Port Scanner" storyboardIdentifier="AboutViewController" id="3HR-xl-gtM" customClass="AboutViewController" customModule="PortScanner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="WWH-WA-6JT">
-                        <rect key="frame" x="0.0" y="0.0" width="381" height="360"/>
+                        <rect key="frame" x="0.0" y="0.0" width="451" height="360"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ydi-vz-NHN">
-                                <rect key="frame" x="18" y="20" width="345" height="17"/>
+                                <rect key="frame" x="18" y="20" width="415" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Copyright © 2018 Chanwoo Noh. All rights reserved." id="GHq-BM-eDw">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
@@ -840,20 +840,20 @@
                                 </textFieldCell>
                             </textField>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WOI-Wg-9Lk">
-                                <rect key="frame" x="182" y="324" width="16" height="16"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="StatusBarButtonImage" id="rcd-5y-SO1"/>
+                                <rect key="frame" x="162" y="212" width="128" height="128"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="AppIcon" id="rcd-5y-SO1"/>
                             </imageView>
                             <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZO-8F-4bh">
-                                <rect key="frame" x="70" y="45" width="241" height="211"/>
+                                <rect key="frame" x="70" y="45" width="311" height="99"/>
                                 <clipView key="contentView" id="VEI-dO-vzw">
-                                    <rect key="frame" x="1" y="1" width="239" height="209"/>
+                                    <rect key="frame" x="1" y="1" width="309" height="97"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" id="L3S-2D-W0J">
-                                            <rect key="frame" x="0.0" y="0.0" width="239" height="209"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="309" height="97"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <size key="minSize" width="239" height="209"/>
+                                            <size key="minSize" width="309" height="97"/>
                                             <size key="maxSize" width="463" height="10000000"/>
                                             <attributedString key="textStorage">
                                                 <fragment content="CHANGELOG">
@@ -874,12 +874,12 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="g8s-jR-ubk">
-                                    <rect key="frame" x="224" y="1" width="16" height="209"/>
+                                    <rect key="frame" x="294" y="1" width="16" height="97"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5O7-L0-Tgu">
-                                <rect key="frame" x="167" y="264" width="48" height="17"/>
+                                <rect key="frame" x="202" y="152" width="48" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="version" id="fR8-Gq-dnh">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -887,7 +887,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4YQ-Fe-DdQ">
-                                <rect key="frame" x="18" y="289" width="345" height="23"/>
+                                <rect key="frame" x="18" y="177" width="415" height="23"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="PORT SCANNER" id="vss-iU-rEU">
                                     <font key="font" size="18" name="Helvetica-Bold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -919,7 +919,7 @@
                 </viewController>
                 <customObject id="rET-mi-8ow" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="700" y="859"/>
+            <point key="canvasLocation" x="734.5" y="859"/>
         </scene>
         <!--Port Scanner Preference-->
         <scene sceneID="aVv-A9-YDE">
@@ -957,7 +957,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="StatusBarButtonImage" width="16" height="16"/>
+        <image name="AppIcon" width="128" height="128"/>
         <image name="buttonCell:6MX-qe-FhY:image" width="1" height="1">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGVVZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QEgcI
