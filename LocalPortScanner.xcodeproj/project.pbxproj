@@ -83,7 +83,7 @@
 		9D8EE1A820FB626D0009279F /* LaunchHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LaunchHelper.entitlements; sourceTree = "<group>"; };
 		9D8EE1AE20FB63090009279F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		9D8EE1B020FB63160009279F /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
-		9D9A5E9B20ECCE7700099720 /* PortScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PortScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D9A5E9B20ECCE7700099720 /* LocalPortScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalPortScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D9A5E9E20ECCE7700099720 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D9A5EA020ECCE7700099720 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9D9A5EA220ECCE7800099720 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -171,7 +171,7 @@
 		9D9A5E9C20ECCE7700099720 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9D9A5E9B20ECCE7700099720 /* PortScanner.app */,
+				9D9A5E9B20ECCE7700099720 /* LocalPortScanner.app */,
 				9D52163820F680F30093887E /* so.yoko.PrivilegedTaskRunnerHelper */,
 				9D8EE19C20FB626B0009279F /* LaunchHelper.app */,
 			);
@@ -234,9 +234,9 @@
 			productReference = 9D8EE19C20FB626B0009279F /* LaunchHelper.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9D9A5E9A20ECCE7700099720 /* PortScanner */ = {
+		9D9A5E9A20ECCE7700099720 /* LocalPortScanner */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9D9A5EAB20ECCE7800099720 /* Build configuration list for PBXNativeTarget "PortScanner" */;
+			buildConfigurationList = 9D9A5EAB20ECCE7800099720 /* Build configuration list for PBXNativeTarget "LocalPortScanner" */;
 			buildPhases = (
 				9D9A5E9720ECCE7700099720 /* Sources */,
 				9D9A5E9820ECCE7700099720 /* Frameworks */,
@@ -248,9 +248,9 @@
 			);
 			dependencies = (
 			);
-			name = PortScanner;
+			name = LocalPortScanner;
 			productName = PortMapper;
-			productReference = 9D9A5E9B20ECCE7700099720 /* PortScanner.app */;
+			productReference = 9D9A5E9B20ECCE7700099720 /* LocalPortScanner.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -288,7 +288,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9D9A5E9620ECCE7700099720 /* Build configuration list for PBXProject "PortScanner" */;
+			buildConfigurationList = 9D9A5E9620ECCE7700099720 /* Build configuration list for PBXProject "LocalPortScanner" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -301,7 +301,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9D9A5E9A20ECCE7700099720 /* PortScanner */,
+				9D9A5E9A20ECCE7700099720 /* LocalPortScanner */,
 				9D52163720F680F30093887E /* PrivilegedTaskRunnerHelper */,
 				9D8EE19B20FB626B0009279F /* LaunchHelper */,
 			);
@@ -660,7 +660,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9D9A5E9620ECCE7700099720 /* Build configuration list for PBXProject "PortScanner" */ = {
+		9D9A5E9620ECCE7700099720 /* Build configuration list for PBXProject "LocalPortScanner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9D9A5EA920ECCE7800099720 /* Debug */,
@@ -669,7 +669,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9D9A5EAB20ECCE7800099720 /* Build configuration list for PBXNativeTarget "PortScanner" */ = {
+		9D9A5EAB20ECCE7800099720 /* Build configuration list for PBXNativeTarget "LocalPortScanner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9D9A5EAC20ECCE7800099720 /* Debug */,

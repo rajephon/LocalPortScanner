@@ -41,7 +41,7 @@ class PortScannerViewController: NSViewController {
         
         // Daemon path, if it is already installed
         let helperURL = Bundle.main.bundleURL.appendingPathComponent("Contents/Library/LaunchServices/\(HelperConstants.machServiceName)")
-        let helperBundleInfo = CFBundleCopyInfoDictionaryForURL(helperURL as CFURL!)
+        let helperBundleInfo = CFBundleCopyInfoDictionaryForURL(helperURL as CFURL?)
         if helperBundleInfo != nil {
             foundAlreadyInstalledDaemon = true
         }

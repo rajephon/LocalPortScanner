@@ -694,7 +694,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="600" id="AeZ-uf-TX3"/>
                                 </constraints>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="PORT SCANNER" id="9PL-WH-OTK">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="LOCAL PORT SCANNER" id="9PL-WH-OTK">
                                     <font key="font" size="20" name="Helvetica-Bold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -705,7 +705,7 @@
                             </box>
                             <button toolTip="Terminate" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PrT-Sz-Aq1">
                                 <rect key="frame" x="20" y="71" width="600" height="19"/>
-                                <buttonCell key="cell" type="recessed" title="About Port Scanner" bezelStyle="recessed" image="buttonCell:F8a-Cu-RNX:image" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" inset="2" id="F8a-Cu-RNX">
+                                <buttonCell key="cell" type="recessed" title="About Local Port Scanner" bezelStyle="recessed" image="buttonCell:F8a-Cu-RNX:image" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" inset="2" id="F8a-Cu-RNX">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="systemBold" size="12"/>
                                 </buttonCell>
@@ -725,7 +725,7 @@
                             </button>
                             <button toolTip="Terminate" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tdo-jh-k4Y">
                                 <rect key="frame" x="20" y="19" width="600" height="19"/>
-                                <buttonCell key="cell" type="recessed" title="Quit Port Scanner" bezelStyle="recessed" image="buttonCell:egC-nk-zuV:image" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" inset="2" id="egC-nk-zuV">
+                                <buttonCell key="cell" type="recessed" title="Quit Local Port Scanner" bezelStyle="recessed" image="buttonCell:egC-nk-zuV:image" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" inset="2" id="egC-nk-zuV">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="systemBold" size="12"/>
                                 </buttonCell>
@@ -837,10 +837,10 @@
             </objects>
             <point key="canvasLocation" x="20.5" y="818.5"/>
         </scene>
-        <!--About Port Scanner-->
+        <!--About Local Port Scanner-->
         <scene sceneID="dKX-1K-ME1">
             <objects>
-                <viewController title="About Port Scanner" storyboardIdentifier="AboutViewController" id="3HR-xl-gtM" customClass="AboutViewController" customModule="PortScanner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="About Local Port Scanner" storyboardIdentifier="AboutViewController" id="3HR-xl-gtM" customClass="AboutViewController" customModule="PortScanner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="WWH-WA-6JT">
                         <rect key="frame" x="0.0" y="0.0" width="435" height="360"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -902,7 +902,7 @@
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4YQ-Fe-DdQ">
                                 <rect key="frame" x="18" y="177" width="399" height="23"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="PORT SCANNER" id="vss-iU-rEU">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="LOCAL PORT SCANNER" id="vss-iU-rEU">
                                     <font key="font" size="18" name="Helvetica-Bold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -935,17 +935,17 @@
             </objects>
             <point key="canvasLocation" x="726.5" y="859"/>
         </scene>
-        <!--Port Scanner Preference-->
+        <!--Local Port Scanner Preference-->
         <scene sceneID="aVv-A9-YDE">
             <objects>
-                <viewController title="Port Scanner Preference" storyboardIdentifier="PreferenceViewController" id="92D-Cm-19P" customClass="PreferenceViewController" customModule="PortScanner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Local Port Scanner Preference" storyboardIdentifier="PreferenceViewController" id="92D-Cm-19P" customClass="PreferenceViewController" customModule="PortScanner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="L9Z-HN-Xge">
-                        <rect key="frame" x="0.0" y="0.0" width="338" height="54"/>
+                        <rect key="frame" x="0.0" y="0.0" width="366" height="54"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RlI-mH-lIS">
-                                <rect key="frame" x="18" y="18" width="267" height="18"/>
-                                <buttonCell key="cell" type="check" title="Automatically start Port Scanner at login" bezelStyle="regularSquare" imagePosition="left" inset="2" id="pL2-XV-JNl">
+                                <rect key="frame" x="18" y="18" width="295" height="18"/>
+                                <buttonCell key="cell" type="check" title="Automatically start LocalPortScanner at login" bezelStyle="regularSquare" imagePosition="left" inset="2" id="pL2-XV-JNl">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
