@@ -767,7 +767,21 @@
                                             <size key="minSize" width="598" height="268"/>
                                             <size key="maxSize" width="600" height="10000000"/>
                                             <attributedString key="textStorage">
-                                                <fragment content=".">
+                                                <fragment content="Click ">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="11" name="Courier"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="↻">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="11" name="ArialUnicodeMS"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content=" button">
                                                     <attributes>
                                                         <color key="NSColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <font key="NSFont" size="11" name="Courier"/>
@@ -828,11 +842,11 @@
             <objects>
                 <viewController title="About Port Scanner" storyboardIdentifier="AboutViewController" id="3HR-xl-gtM" customClass="AboutViewController" customModule="PortScanner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="WWH-WA-6JT">
-                        <rect key="frame" x="0.0" y="0.0" width="451" height="360"/>
+                        <rect key="frame" x="0.0" y="0.0" width="435" height="360"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ydi-vz-NHN">
-                                <rect key="frame" x="18" y="20" width="415" height="17"/>
+                                <rect key="frame" x="18" y="20" width="399" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Copyright © 2018 Chanwoo Noh. All rights reserved." id="GHq-BM-eDw">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
@@ -840,20 +854,20 @@
                                 </textFieldCell>
                             </textField>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WOI-Wg-9Lk">
-                                <rect key="frame" x="162" y="212" width="128" height="128"/>
+                                <rect key="frame" x="154" y="212" width="128" height="128"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="AppIcon" id="rcd-5y-SO1"/>
                             </imageView>
                             <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZO-8F-4bh">
-                                <rect key="frame" x="70" y="45" width="311" height="99"/>
+                                <rect key="frame" x="70" y="45" width="295" height="99"/>
                                 <clipView key="contentView" id="VEI-dO-vzw">
-                                    <rect key="frame" x="1" y="1" width="309" height="97"/>
+                                    <rect key="frame" x="1" y="1" width="293" height="97"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" id="L3S-2D-W0J">
-                                            <rect key="frame" x="0.0" y="0.0" width="309" height="97"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="293" height="97"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <size key="minSize" width="309" height="97"/>
+                                            <size key="minSize" width="293" height="97"/>
                                             <size key="maxSize" width="463" height="10000000"/>
                                             <attributedString key="textStorage">
                                                 <fragment content="CHANGELOG">
@@ -874,12 +888,12 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="g8s-jR-ubk">
-                                    <rect key="frame" x="294" y="1" width="16" height="97"/>
+                                    <rect key="frame" x="278" y="1" width="16" height="97"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5O7-L0-Tgu">
-                                <rect key="frame" x="202" y="152" width="48" height="17"/>
+                                <rect key="frame" x="194" y="152" width="48" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="version" id="fR8-Gq-dnh">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -887,7 +901,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4YQ-Fe-DdQ">
-                                <rect key="frame" x="18" y="177" width="415" height="23"/>
+                                <rect key="frame" x="18" y="177" width="399" height="23"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="PORT SCANNER" id="vss-iU-rEU">
                                     <font key="font" size="18" name="Helvetica-Bold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -919,7 +933,7 @@
                 </viewController>
                 <customObject id="rET-mi-8ow" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="734.5" y="859"/>
+            <point key="canvasLocation" x="726.5" y="859"/>
         </scene>
         <!--Port Scanner Preference-->
         <scene sceneID="aVv-A9-YDE">
