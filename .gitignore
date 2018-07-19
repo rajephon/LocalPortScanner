@@ -1,3 +1,9 @@
+# Profile
+Profile/
+
+# Release builds
+Releases/
+
 # Created by https://www.gitignore.io/api/xcode,cocoapods
 
 ### CocoaPods ###

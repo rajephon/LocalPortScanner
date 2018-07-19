@@ -939,13 +939,13 @@
         <scene sceneID="aVv-A9-YDE">
             <objects>
                 <viewController title="Local Port Scanner Preference" storyboardIdentifier="PreferenceViewController" id="92D-Cm-19P" customClass="PreferenceViewController" customModule="PortScanner" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="L9Z-HN-Xge">
-                        <rect key="frame" x="0.0" y="0.0" width="366" height="54"/>
+                    <view key="view" misplaced="YES" id="L9Z-HN-Xge">
+                        <rect key="frame" x="0.0" y="0.0" width="374" height="54"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RlI-mH-lIS">
-                                <rect key="frame" x="18" y="18" width="295" height="18"/>
-                                <buttonCell key="cell" type="check" title="Automatically start LocalPortScanner at login" bezelStyle="regularSquare" imagePosition="left" inset="2" id="pL2-XV-JNl">
+                                <rect key="frame" x="18" y="18" width="303" height="18"/>
+                                <buttonCell key="cell" type="check" title="Automatically start Local Port Scanner at login" bezelStyle="regularSquare" imagePosition="left" inset="2" id="pL2-XV-JNl">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
