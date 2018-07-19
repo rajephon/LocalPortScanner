@@ -1,3 +1,4 @@
+<img src="https://github.com/rajephon/PortMapper/raw/master/PortScanner/Assets.xcassets/AppIcon.appiconset/icon_128%402x.png?raw=true" width="128" height="128" alt="App Icon">
 
 # Local Port Scanner
 `lsof`를 이용해 현재 Listening 상태로 열린 TCP 포트를 리스트업 해주는 macOS용 메뉴바 위젯입니다.
