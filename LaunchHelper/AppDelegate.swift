@@ -36,7 +36,7 @@ extension AppDelegate: NSApplicationDelegate {
             components.removeLast()
             components.removeLast()
             components.append("MacOS")
-            components.append("PortScanner") //main app name
+            components.append("LocalPortScanner") //main app name
             
             let newPath = NSString.path(withComponents: components)
             

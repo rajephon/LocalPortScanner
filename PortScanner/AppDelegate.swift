@@ -29,14 +29,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         // about helper daemon
 //        viewController.installHelperDaemon()
-        if !viewController.checkIfHelperDaemonExists() {
-            viewController.installHelperDaemon()
-        }else {
-            viewController.checkHelperVersionAndUpdateIfNecessary()
+//        if !viewController.checkIfHelperDaemonExists() {
+//            viewController.installHelperDaemon()
+//        }else {
+//            viewController.checkHelperVersionAndUpdateIfNecessary()
+//        }
+        viewController.checkHelperVersionAndUpdateIfNecessary { installed in
+            if !installed {
+                self.viewController.installHelperDaemon()
+            }
+            // Create an empty authorization reference
+            self.viewController.initAuthorizationRef()
         }
-        
-        // Create an empty authorization reference
-        viewController.initAuthorizationRef()
         
         if !popover.isShown {
             showPopover(sender: self)

@@ -19,13 +19,26 @@ class PortScannerViewController: NSViewController {
     var connection: NSXPCConnection?
     var authRef: AuthorizationRef?
     
+    var logArchive: String = ""
+    
     /// Initialize AuthorizationRef, as we need to manage it's lifecycle
     func initAuthorizationRef() {
         // Create an empty AuthorizationRef
         let status = AuthorizationCreate(nil, nil, AuthorizationFlags(), &authRef)
         if (status != OSStatus(errAuthorizationSuccess)) {
-            NSLog("AppviewController: AuthorizationCreate failed")
+            printLog("AppviewController: AuthorizationCreate failed")
             return
+        }
+    }
+    
+    func printLog(_ message:String) -> Void {
+        NSLog(message)
+        if self.resultTextView != nil {
+            DispatchQueue.main.async {
+                self.resultTextView.string += "\n" + message
+            }
+        }else {
+            logArchive += "\n" + message
         }
     }
     
@@ -56,7 +69,7 @@ class PortScannerViewController: NSViewController {
         
         // Check if the reference is valid
         guard authStatus == errAuthorizationSuccess else {
-            NSLog("AppviewController: Authorization failed: \(authStatus)")
+            printLog("AppviewController: Authorization failed: \(authStatus)")
             return
         }
         
@@ -68,7 +81,7 @@ class PortScannerViewController: NSViewController {
         
         // Check if the authorization went succesfully
         guard authStatus == errAuthorizationSuccess else {
-            NSLog("AppviewController: Couldn't obtain admin privileges: \(authStatus)")
+            printLog("AppviewController: Couldn't obtain admin privileges: \(authStatus)")
             return
         }
         
@@ -77,9 +90,9 @@ class PortScannerViewController: NSViewController {
         
         if(SMJobBless(kSMDomainSystemLaunchd, HelperConstants.machServiceName as CFString, authRef, &error) == false) {
             let blessError = error!.takeRetainedValue() as Error
-            NSLog("AppviewController: Bless Error: \(blessError)")
+            printLog("AppviewController: Bless Error: \(blessError)")
         } else {
-            NSLog("AppviewController: \(HelperConstants.machServiceName) installed successfully")
+            printLog("AppviewController: \(HelperConstants.machServiceName) installed successfully")
         }
         
         // Release the Authorization Reference
@@ -99,8 +112,7 @@ class PortScannerViewController: NSViewController {
                 self.connection?.invalidationHandler = nil
                 OperationQueue.main.addOperation() {
                     self.connection = nil
-                    NSLog("AppviewController: XPC Connection Invalidated")
-                    self.resultTextView.string = "XPC Connection Invalidated"
+                    self.printLog("AppviewController: XPC Connection Invalidated")
                 }
             }
             connection?.resume()
@@ -110,27 +122,32 @@ class PortScannerViewController: NSViewController {
     }
     
     /// Compare app's helper version to installed daemon's version and update if necessary
-    func checkHelperVersionAndUpdateIfNecessary() {
+    func checkHelperVersionAndUpdateIfNecessary(callback: @escaping (Bool) -> Void) {
         // Daemon path
         let helperURL = Bundle.main.bundleURL.appendingPathComponent("Contents/Library/LaunchServices/\(HelperConstants.machServiceName)")
         let helperBundleInfo = CFBundleCopyInfoDictionaryForURL(helperURL as CFURL)
-        let helperInfo = helperBundleInfo! as NSDictionary
-        let helperVersion = helperInfo["CFBundleVersion"] as! String
-        
-        NSLog("AppviewController: PrivilegedTaskRunner Bundle Version => \(helperVersion)")
-        
-        // When the connection is valid, do the actual inter process call
-        let xpcService = prepareXPC()?.remoteObjectProxyWithErrorHandler() { error -> Void in
-            NSLog("XPC error: \(error)")
+        if helperBundleInfo != nil {
+            let helperInfo = helperBundleInfo! as NSDictionary
+            let helperVersion = helperInfo["CFBundleVersion"] as! String
+            
+            printLog("AppviewController: PrivilegedTaskRunner Bundle Version => \(helperVersion)")
+            
+            // When the connection is valid, do the actual inter process call
+//            let xpcService = prepareXPC()?.remoteObjectProxyWithErrorHandler() { error -> Void in
+//                NSLog("XPC error: \(error)")
+//                } as? RemoteProcessProtocol
+            let xpcService = prepareXPC()?.remoteObjectProxyWithErrorHandler() { error -> Void in
+                callback(false)
             } as? RemoteProcessProtocol
-        
-        xpcService?.getVersion(reply: {
-            installedVersion in
-            NSLog("AppviewController: PrivilegedTaskRunner Helper Installed Version => \(installedVersion)")
-            if(installedVersion != helperVersion) {
-                installHelperDaemon()
-            }
-        })
+            
+            xpcService?.getVersion(reply: {
+                installedVersion in
+                printLog("AppviewController: PrivilegedTaskRunner Helper Installed Version => \(installedVersion)")
+                callback(installedVersion == helperVersion)
+            })
+        }else {
+            callback(false)
+        }
     }
     
     /// Call Helper using XPC with authorization
@@ -141,7 +158,7 @@ class PortScannerViewController: NSViewController {
         // Make an external form of the AuthorizationRef
         var status = AuthorizationMakeExternalForm(authRef!, &authRefExtForm)
         if (status != OSStatus(errAuthorizationSuccess)) {
-            NSLog("AppviewController: AuthorizationMakeExternalForm failed")
+            printLog("AppviewController: AuthorizationMakeExternalForm failed")
             return
         }
         
@@ -156,7 +173,7 @@ class PortScannerViewController: NSViewController {
             var defaultRules = AppAuthorizationRights.shellRightDefaultRule
             defaultRules.updateValue(timeout as AnyObject, forKey: "timeout")
             status = AuthorizationRightSet(authRef!, AppAuthorizationRights.shellRightName.utf8String!, defaultRules as CFDictionary, AppAuthorizationRights.shellRightDescription, nil, "Common" as CFString)
-            NSLog("AppviewController: : Adding authorization right to the security database")
+            printLog("AppviewController: : Adding authorization right to the security database")
         }
         
         // We need to put the AuthorizationRef to a form that can be passed through inter process call
@@ -164,7 +181,7 @@ class PortScannerViewController: NSViewController {
         
         // When the connection is valid, do the actual inter process call
         let xpcService = prepareXPC()?.remoteObjectProxyWithErrorHandler() { error -> Void in
-            NSLog("AppviewController: XPC error: \(error)")
+            self.printLog("AppviewController: XPC error: \(error)")
             } as? RemoteProcessProtocol
         xpcService?.runCommand(path: "ls", authData: authData, reply: {
             reply in
@@ -206,6 +223,8 @@ class PortScannerViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        resultTextView.string += logArchive
     }
     
     // MARK: - IBAction
