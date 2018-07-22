@@ -9,10 +9,10 @@
 	<key>CFBundleName</key>
 	<string>so.yoko.PrivilegedTaskRunnerHelper</string>
 	<key>CFBundleVersion</key>
-	<string>1.2</string>
+	<string>1.3</string>
 	<key>SMAuthorizedClients</key>
 	<array>
-		<string>identifier "so.yoko.portscanner" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: Chanwoo Noh (QPS4TBJTJZ)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
+		<string>anchor apple generic and identifier "so.yoko.portscanner" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "8B5JVCS72K")</string>
 	</array>
 </dict>
 </plist>

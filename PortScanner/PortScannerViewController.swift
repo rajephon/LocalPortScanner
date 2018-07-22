@@ -100,6 +100,7 @@ class PortScannerViewController: NSViewController {
                 OperationQueue.main.addOperation() {
                     self.connection = nil
                     NSLog("AppviewController: XPC Connection Invalidated")
+                    self.resultTextView.string = "XPC Connection Invalidated"
                 }
             }
             connection?.resume()
@@ -151,7 +152,7 @@ class PortScannerViewController: NSViewController {
         status = AuthorizationRightGet(AppAuthorizationRights.shellRightName.utf8String!, &currentRight)
 
         if (status == errAuthorizationDenied) {
-            
+            print("errAuthorizationDenied")
             var defaultRules = AppAuthorizationRights.shellRightDefaultRule
             defaultRules.updateValue(timeout as AnyObject, forKey: "timeout")
             status = AuthorizationRightSet(authRef!, AppAuthorizationRights.shellRightName.utf8String!, defaultRules as CFDictionary, AppAuthorizationRights.shellRightDescription, nil, "Common" as CFString)
@@ -165,7 +166,6 @@ class PortScannerViewController: NSViewController {
         let xpcService = prepareXPC()?.remoteObjectProxyWithErrorHandler() { error -> Void in
             NSLog("AppviewController: XPC error: \(error)")
             } as? RemoteProcessProtocol
-        
         xpcService?.runCommand(path: "ls", authData: authData, reply: {
             reply in
             // Let's update GUI asynchronously

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -675,7 +674,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="PortScanner" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="LocalPortScanner" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -684,7 +683,7 @@
         <!--Port Scanner View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController storyboardIdentifier="PortMapperViewController" id="XfG-lQ-9wD" customClass="PortScannerViewController" customModule="PortScanner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PortMapperViewController" id="XfG-lQ-9wD" customClass="PortScannerViewController" customModule="LocalPortScanner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="640" height="425"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -840,7 +839,7 @@
         <!--About Local Port Scanner-->
         <scene sceneID="dKX-1K-ME1">
             <objects>
-                <viewController title="About Local Port Scanner" storyboardIdentifier="AboutViewController" id="3HR-xl-gtM" customClass="AboutViewController" customModule="PortScanner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="About Local Port Scanner" storyboardIdentifier="AboutViewController" id="3HR-xl-gtM" customClass="AboutViewController" customModule="LocalPortScanner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="WWH-WA-6JT">
                         <rect key="frame" x="0.0" y="0.0" width="435" height="360"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -938,8 +937,8 @@
         <!--Local Port Scanner Preference-->
         <scene sceneID="aVv-A9-YDE">
             <objects>
-                <viewController title="Local Port Scanner Preference" storyboardIdentifier="PreferenceViewController" id="92D-Cm-19P" customClass="PreferenceViewController" customModule="PortScanner" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" misplaced="YES" id="L9Z-HN-Xge">
+                <viewController title="Local Port Scanner Preference" storyboardIdentifier="PreferenceViewController" id="92D-Cm-19P" customClass="PreferenceViewController" customModule="LocalPortScanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="L9Z-HN-Xge">
                         <rect key="frame" x="0.0" y="0.0" width="374" height="54"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>

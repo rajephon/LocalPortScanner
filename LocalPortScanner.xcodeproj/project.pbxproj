@@ -10,7 +10,6 @@
 		9D26F61E20EE157A008C10A6 /* YKSLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D26F61D20EE157A008C10A6 /* YKSLibrary.swift */; };
 		9D2CC9AF20F8CDDC00B01FF2 /* AppAuthorizationRights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2CC9AE20F8CDDC00B01FF2 /* AppAuthorizationRights.swift */; };
 		9D52163B20F680F30093887E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D52163A20F680F30093887E /* main.swift */; };
-		9D52164120F683850093887E /* so.yoko.PrivilegedTaskRunnerHelper in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9D52163820F680F30093887E /* so.yoko.PrivilegedTaskRunnerHelper */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9D52164320F683D40093887E /* PrivilegedTaskRunnerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D52164220F683D40093887E /* PrivilegedTaskRunnerHelper.swift */; };
 		9D52164420F684060093887E /* PrivilegedTaskRunnerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D52164220F683D40093887E /* PrivilegedTaskRunnerHelper.swift */; };
 		9D52164620F6843D0093887E /* ProcessHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D52164520F6843D0093887E /* ProcessHelper.swift */; };
@@ -20,7 +19,6 @@
 		9D8EE19F20FB626B0009279F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8EE19E20FB626B0009279F /* AppDelegate.swift */; };
 		9D8EE1A320FB626D0009279F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D8EE1A220FB626D0009279F /* Assets.xcassets */; };
 		9D8EE1A620FB626D0009279F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D8EE1A420FB626D0009279F /* Main.storyboard */; };
-		9D8EE1AC20FB62E50009279F /* LaunchHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9D8EE19C20FB626B0009279F /* LaunchHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9D8EE1AF20FB63090009279F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D8EE1AE20FB63090009279F /* Cocoa.framework */; };
 		9D8EE1B120FB63170009279F /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D8EE1B020FB63160009279F /* ServiceManagement.framework */; };
 		9D9A5E9F20ECCE7700099720 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A5E9E20ECCE7700099720 /* AppDelegate.swift */; };
@@ -28,6 +26,8 @@
 		9D9A5EA320ECCE7800099720 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D9A5EA220ECCE7800099720 /* Assets.xcassets */; };
 		9D9A5EA620ECCE7800099720 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D9A5EA420ECCE7800099720 /* Main.storyboard */; };
 		9D9A5EAF20ECD3CD00099720 /* PortScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A5EAE20ECD3CD00099720 /* PortScannerViewController.swift */; };
+		9DB8279421046260000F8599 /* so.yoko.PrivilegedTaskRunnerHelper in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9D52163820F680F30093887E /* so.yoko.PrivilegedTaskRunnerHelper */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		9DB8279521046266000F8599 /* LaunchHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9D8EE19C20FB626B0009279F /* LaunchHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9DEF2A8D20F3EAA200E51CB5 /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEF2A8C20F3EAA200E51CB5 /* PreferenceViewController.swift */; };
 		9DF309C520F0C73900F8BD9D /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF309C420F0C73900F8BD9D /* AboutViewController.swift */; };
 		9DF309C720F0D1C400F8BD9D /* CHANGELOG in Resources */ = {isa = PBXBuildFile; fileRef = 9DF309C620F0D1C400F8BD9D /* CHANGELOG */; };
@@ -40,7 +40,7 @@
 			dstPath = Contents/Library/LoginItems;
 			dstSubfolderSpec = 1;
 			files = (
-				9D8EE1AC20FB62E50009279F /* LaunchHelper.app in CopyFiles */,
+				9DB8279521046266000F8599 /* LaunchHelper.app in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,7 +50,7 @@
 			dstPath = Contents/Library/LaunchServices;
 			dstSubfolderSpec = 1;
 			files = (
-				9D52164120F683850093887E /* so.yoko.PrivilegedTaskRunnerHelper in CopyFiles */,
+				9DB8279421046260000F8599 /* so.yoko.PrivilegedTaskRunnerHelper in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

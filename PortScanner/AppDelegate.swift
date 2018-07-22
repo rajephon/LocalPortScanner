@@ -34,9 +34,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }else {
             viewController.checkHelperVersionAndUpdateIfNecessary()
         }
+        
         // Create an empty authorization reference
         viewController.initAuthorizationRef()
         
+        if !popover.isShown {
+            showPopover(sender: self)
+        }
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
