@@ -4,7 +4,7 @@
 `lsof`를 이용해 현재 Listening 상태로 열린 TCP 포트를 리스트업 해주는 macOS용 메뉴바 위젯입니다.
 
 ## How to Install
-- [Release](./releases)에서 최신 버전의 `LocalPortScanner.dmg`를 다운로드 후 실행합니다.
+- [Release](https://github.com/rajephon/LocalPortScanner/releases)에서 최신 버전의 `LocalPortScanner.dmg`를 다운로드 후 실행합니다.
 - `LocalPortScanner.app`을 `/Application` 디렉토리에 드래그하여 설치합니다.
 - 설치된 `LocalPortScanner.app`을 실행합니다.
 
